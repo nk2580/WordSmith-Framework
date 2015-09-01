@@ -1,7 +1,7 @@
 {
-    "name": "nikk2580/wordsmith",
+    "name": "nk2580/WordSmith",
     "type": "library",
-    "description": "the bower and composer comliant wordpress theme framework library",
+    "description": "The Bower, Grunt & Composer compliant WordPress theme framework library",
     "license": "GPL v2",
     "authors": [
         {
@@ -11,5 +11,10 @@
     ],
     "require": {
         "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "WordSmith": "src/"
+        }
     }
 }

@@ -5,7 +5,7 @@
  * this class is the base object for a filter to be added into wordpress.
  * 
  */
-namespace WordSmith\Filters;
+namespace nk2580\wordsmith\Filters;
 
 class Filter{
 	

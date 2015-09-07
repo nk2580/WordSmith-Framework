@@ -7,7 +7,7 @@
  * 
  */
 
-namespace WordSmith\MetaBoxes;
+namespace nk2580\wordsmith\MetaBoxes;
 
 class MetaBox {
 

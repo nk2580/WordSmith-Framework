@@ -5,7 +5,7 @@
  * this class is the base object for a post type to be added into wordpress.
  * 
  */
-namespace WordSmith\SettingsPages;
+namespace nk2580\wordsmith\SettingsPages;
 
 class SettingsPage{
 	

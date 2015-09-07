@@ -6,7 +6,7 @@
  * the input class to be used within the framework
  */
 
-namespace WordSmith\Inputs;
+namespace nk2580\wordsmith\Inputs;
 
 class Input {
 

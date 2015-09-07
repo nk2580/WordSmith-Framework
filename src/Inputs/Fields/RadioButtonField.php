@@ -6,9 +6,9 @@
  * and open the template in the editor.
  */
 
-namespace WordSmith\Inputs\Fields;
+namespace nk2580\wordsmith\Inputs\Fields;
 
-use WordSmith\Inputs\Input as Input;
+use nk2580\wordsmith\Inputs\Input as Input;
 
 /**
  * Description of TextField

@@ -7,9 +7,9 @@
  * it is a best prectise initiative that all actions to implement custom wordpress logic be enclosed in a single class which exnteds this class.
  */
 
-namespace WordSmith\Taxonomies\NonHierarchical;
+namespace nk2580\wordsmith\Taxonomies\NonHierarchical;
 
-use WordSmith\Taxonomies\Taxonomy as Taxonomy;
+use nk2580\wordsmith\Taxonomies\Taxonomy as Taxonomy;
 
 class NonHierarchicalTaxonomy extends Taxonomy {
 

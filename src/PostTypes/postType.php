@@ -5,7 +5,7 @@
  * this class is the base object for a post type to be added into wordpress.
  * 
  */
-namespace WordSmith\PostTypes;
+namespace nk2580\wordsmith\PostTypes;
 
 class PostType{
 	

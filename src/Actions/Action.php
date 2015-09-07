@@ -7,7 +7,7 @@
  * it is a best prectise initiative that all actions to implement custom wordpress logic be enclosed in a single class which exnteds this class.
  */
 
-namespace WordSmith\Actions;
+namespace nk2580\wordsmith\Actions;
 
 class Action {
 

@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "nk2580\\wordsmith": "src/"
+            "nk2580\\wordsmith\\": "src/"
         }
     }
 }

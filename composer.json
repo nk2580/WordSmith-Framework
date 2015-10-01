@@ -2,7 +2,7 @@
     "name": "nk2580/wordsmith",
     "type": "library",
     "description": "The Bower, Grunt & Composer compliant WordPress theme framework library",
-    "license": "GPL v2",
+    "license": "GPL-2.0",
     "authors": [
         {
             "name": "nik kyriakidis",

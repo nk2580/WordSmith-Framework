@@ -17,7 +17,7 @@ use nk2580\wordsmith\Inputs\Input as Input;
  */
 class TextField extends Input {
     
-    private function printField(){
+    public function printField(){
         $class = $this->getClassString();
         if(!$this->readonly){
             echo "<label for=" . $this->name . " >".$this->label." <input type='text' name='".$this->name.'" class="'.$class.'" id="'.$this->name.'" value="'.$this->value.'" /></label>';

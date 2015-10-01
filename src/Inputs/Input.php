@@ -11,7 +11,7 @@ namespace nk2580\wordsmith\Inputs;
 class Input {
 
     protected $name;
-    protected $class;
+    protected $class = "";
     protected $readonly;
     protected $value;
     protected $label;
@@ -20,10 +20,9 @@ class Input {
         $this->name = $name;
         $this->class = $class;
         $this->readonly = $readonly;
-        $this->printField();
     }
     
-    private function printField(){
+    public function printField(){
         echo "Implementing the Input class directly is foribbben. please use an input field or type";
     }
     
@@ -38,6 +37,10 @@ class Input {
         else{
             return $this->class;
         }
+    }
+    
+    public function getLabel(){
+        return $this->label;
     }
 
 }

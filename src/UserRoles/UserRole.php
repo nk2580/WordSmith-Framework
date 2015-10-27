@@ -11,16 +11,16 @@ namespace nk2580\wordsmith\UserRoles;
 
 class UserRole {
 
-    public $role_name;
-    public $display_name;
-    public $capabilities = [];
+    protected $role_name;
+    protected $display_name;
+    protected $capabilities = [];
 
     public function __construct() {
-        $this->callAddRole($this->role_name, $this->display_name, $this->capabilities);
+        add_action( 'init', array( $this, 'callAddRole' ) );
     }
 
-    private function callAddRole($role_name, $display_name, $capabilities) {
-        add_role( $role_name, $display_name, $capabilities );
+    public function callAddRole() {
+        add_role( $this->role_name, $this->display_name, $this->capabilities );
     }
 
 }

@@ -11,10 +11,10 @@ namespace nk2580\wordsmith\Actions;
 
 class Action {
 
-	public $hook;
-	public $callback;
-	public $priority = 10;
-	public $accepted_args = 1;
+	protected $hook;
+	protected $callback;
+	protected $priority = 10;
+	protected $accepted_args = 1;
 
 	public function __construct() {
 		$this->callAddAction( $this->hook, $this->callback, $this->priority, $this->accepted_args );

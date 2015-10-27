@@ -12,10 +12,21 @@ namespace nk2580\wordsmith\UserCapabilities;
 class UserCapability {
 
     public $role_name;
-    public $cap_name;
+    public $caps;
 
     public function __construct() {
-        $role = get_role( $this->role_name );
-        $role->add_cap( $this->cap_name );
+        add_action( 'admin_init', array($this,'add_theme_caps'));
     }
+    function add_theme_caps() {
+        $role = get_role( $this->role_name );
+        if(is_array($this->caps)){
+            foreach($this->caps as $cap){
+                $role->add_cap( $cap );
+            }
+        }
+        else{
+            $role->add_cap( $this->caps );
+        }
+    }
+
 }

@@ -11,10 +11,10 @@ namespace nk2580\wordsmith\Filters;
 
 class Filter {
 
-    private $tag;
-    private $callback;
-    private $priority;
-    private $args;
+    protected $tag;
+    protected $callback;
+    protected $priority;
+    protected $args;
 
     public function __construct() {
          add_filter($this->tag, array($this, $this->callback), $this->priority, $this->args);

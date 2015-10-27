@@ -11,18 +11,5 @@ namespace nk2580\wordsmith\Endpoints;
 
 class Endpoint {
 
-	protected $name;
-	protected $url;
-	protected $vars;
-	protected $labels;
-
-	public function __construct() {
-		add_action( 'init', array( $this, 'create' ), 0 );
-	}
-
-	function create() {
-		$this->args['labels'] = $this->labels;
-		register_taxonomy( $this->name, $this->post_type, $this->args );
-	}
 
 }

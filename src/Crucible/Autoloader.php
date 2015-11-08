@@ -6,11 +6,12 @@
  * This file is designed to be used with the WordSmith Crucible framework.
  * 
  */
+
 namespace nk2580\wordsmith\Crucible;
 
 class Autoloader {
 
-    public static function load() {
+    public function __construct() {
         
         //DEFINE DEPENDANT CRUCIBLE CONSTANTS
         define("CRUCIBLE_PUBLIC_ASSETS_DIR", CRUCIBLE_ASSET_DIR.'/public');

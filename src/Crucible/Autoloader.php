@@ -6,7 +6,6 @@
  * This file is designed to be used with the WordSmith Crucible framework.
  * 
  */
-
 namespace nk2580\wordsmith\Crucible;
 
 class Autoloader {

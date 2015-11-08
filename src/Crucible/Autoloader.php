@@ -11,7 +11,7 @@ namespace nk2580\wordsmith\Crucible;
 
 class Autoloader {
 
-    public function __construct() {
+    public static function load() {
         
         //DEFINE DEPENDANT CRUCIBLE CONSTANTS
         define("CRUCIBLE_PUBLIC_ASSETS_DIR", CRUCIBLE_ASSET_DIR.'/public');

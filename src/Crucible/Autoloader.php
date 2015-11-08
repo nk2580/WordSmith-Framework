@@ -9,7 +9,7 @@
 
 namespace nk2580\wordsmith\Crucible;
 
-class CrucibleAutoloader {
+class Autoloader {
 
     public function __construct() {
         

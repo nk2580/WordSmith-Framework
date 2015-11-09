@@ -30,17 +30,15 @@ class Autoloader {
     private function recursiveIncluder($dir) {
         $ffs = scandir($dir);
         $i = 0;
-        $list = array();
         foreach ($ffs as $ff) {
             if ($ff != '.' && $ff != '..') {
                 if (strlen($ff) >= 5) {
                     if (substr($ff, -4) == '.php') {
-                        $list[] = $ff;
                         require_once $dir . '/' . $ff;
                     }
                 }
                 if (is_dir($dir . '/' . $ff))
-                    $list['/' . $ff] = recursiveIncluder($dir . '/' . $ff);
+                    $this->recursiveIncluder($dir . '/' . $ff);
             }
         }
     }

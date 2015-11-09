@@ -1,27 +1,23 @@
 <?php
 
-namespace nk2580\wordsmith\Utillities;
+namespace nk2580\wordsmith\Views;
+
+use Philo\Blade\Blade as Blade;
 
 abstract class View {
 
-    private $twig;
+    private $blade;
 
     public function __construct() {
-        $loader = new Twig_Loader_Filesystem([ADMIN_VIEWS_PATH, PUBLIC_VIEWS_PATH]);
-        $this->twig = new Twig_Environment($loader);
+        $this->blade = new Blade(CRUCIBLE_VIEW_DIR, CRUCIBLE_CACHE_DIR);
     }
 
     public function render($template, $data) {
-        echo $this->twig->render($template, $data);
+        echo $this->blade->view()->make($template,$data)->render();
     }
 
     public function get($template, $data) {
-        return $this->twig->render($template, $data);
-    }
-
-    public static function make($template, $data) {
-        $view = new self();
-        $view->show($template, $data);
+        return $this->blade->view()->make($template,$data)->render();
     }
 
 }

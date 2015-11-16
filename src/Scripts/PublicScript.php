@@ -9,7 +9,7 @@
 
 namespace nk2580\wordsmith\Scripts;
 
-class AdminScript extends \nk2580\wordsmith\Actions\Action  {
+class PublicScript extends \nk2580\wordsmith\Actions\Action  {
 
 	protected $hook = "wp_enqueue_scripts";
 

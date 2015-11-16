@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Pushworth\Models;
+namespace nk2580\wordsmith\Models;
 
 class Model {
 

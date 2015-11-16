@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'nk2580\\wordsmith\\' => array($baseDir . '/src'),
+    'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
     'Stringy\\' => array($vendorDir . '/danielstjules/stringy/src'),
     'Philo\\Blade\\' => array($vendorDir . '/philo/laravel-blade/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
@@ -14,6 +15,7 @@ return array(
     'Illuminate\\Support\\' => array($vendorDir . '/illuminate/support'),
     'Illuminate\\Filesystem\\' => array($vendorDir . '/illuminate/filesystem'),
     'Illuminate\\Events\\' => array($vendorDir . '/illuminate/events'),
+    'Illuminate\\Encryption\\' => array($vendorDir . '/illuminate/encryption'),
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
 );

@@ -15,8 +15,8 @@ namespace nk2580\wordsmith\Utillities;
  */
 class Cypher extends \Illuminate\Encryption\Encrypter {
 
-    public function __construct() {
-        parent::__construct(CONTRACT_REPO_SALT);
+    public function __construct($key) {
+        parent::__construct($key);
     }
 
 }

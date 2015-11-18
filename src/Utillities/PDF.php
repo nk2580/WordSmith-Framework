@@ -20,9 +20,7 @@ class PDF extends \Knp\Snappy\Pdf {
     protected $binary;
 
     public function __construct($binary = null, array $options = array(), array $env = null) {
-        if (!$binary) {
-            $this->setupBinary();
-        }
+        $this->setupBinary($binary);
         $this->setupEnvironment();
         parent::__construct($this->binary, $options, $env);
     }
@@ -46,12 +44,21 @@ class PDF extends \Knp\Snappy\Pdf {
                 $path = '/usr/local/bin/wkhtmltopdf';
             }
         }
-        $this->setBinary($path);
+        $this->binary = ($path);
     }
 
     public function export($input, $output, $options, $overwrite) {
         $this->generate($input, $output, $options, $overwrite);
         return $output;
+    }
+
+    public function exportFromHtml($input, $output, $options, $overwrite) {
+        $this->generateFromHtml($input, $output, $options, $overwrite);
+        return $output;
+    }
+
+    public function outputFromHtml($input, $options) {
+        echo $this->getOutputFromHtml($input, $options);
     }
 
     public function output($input, $options) {

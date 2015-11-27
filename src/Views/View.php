@@ -12,12 +12,14 @@ class View {
         $this->blade = new Blade(CRUCIBLE_VIEW_DIR, CRUCIBLE_CACHE_DIR);
     }
 
-    public function render($template, $data=array()) {
-        echo $this->blade->view()->make($template,$data)->render();
+    public static function render($template, $data=array()) {
+        $view = new self();
+        echo $view->blade->view()->make($template,$data)->render();
     }
 
-    public function get($template, $data=array()) {
-        return $this->blade->view()->make($template,$data)->render();
+    public static function get($template, $data=array()) {
+        $view = new self();
+        return $view->blade->view()->make($template,$data)->render();
     }
 
 }

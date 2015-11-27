@@ -14,6 +14,7 @@ class Endpoint {
     public $vars = [];
     public $endpoints = [];
     public $callback;
+    public $position = 'top';
 
     /**
      * Hook WordPress
@@ -41,8 +42,8 @@ class Endpoint {
      * 	@return void
      */
     public function add_endpoints() {
-        foreach ($this->endpoints as $regex => $readable) {
-            add_rewrite_rule($regex, $readable, 'top');
+        foreach ($this->endpoints as $regex => $query) {
+            add_rewrite_rule( $regex, $query ,$this->position);
         }
     }
 

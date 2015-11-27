@@ -17,8 +17,8 @@ class Menu {
         add_action('after_setup_theme', array($this, 'add_menus'));
     }
 
-    private function add_menus() {
-        foreach ($this->$menu as $slug => $description) {
+    public function add_menus() {
+        foreach ($this->menu as $slug => $description) {
             register_nav_menu($slug, $description);
         }
     }

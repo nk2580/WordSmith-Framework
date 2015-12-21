@@ -13,7 +13,7 @@ namespace nk2580\wordsmith\Utillities\NavWalkers;
  *
  * @author accounts
  */
-class Bootstrap extends Walker_Nav_Menu {
+class Bootstrap extends \Walker_Nav_Menu {
 
 	/**
 	 * @see Walker::start_lvl()

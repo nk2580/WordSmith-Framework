@@ -19,7 +19,7 @@ use \Knp\Snappy\Pdf as Snappy;
  */
 class PDF {
 
-    private $snappy;
+    public $snappy;
 
     public function __construct($path = NULL) {
         if (!empty($path)) {

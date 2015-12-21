@@ -6,7 +6,7 @@ use Philo\Blade\Blade as Blade;
 
 class View {
 
-    private $blade;
+    public $blade;
 
     public function __construct() {
         $this->blade = new Blade(CRUCIBLE_VIEW_DIR, CRUCIBLE_CACHE_DIR);
@@ -21,5 +21,11 @@ class View {
         $view = new self();
         return $view->blade->view()->make($template,$data)->render();
     }
+    
+        public static function exists($template) {
+        $view = new self();
+        return $view->blade->view()->exists($template);
+    }
+
 
 }

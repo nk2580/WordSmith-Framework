@@ -16,7 +16,7 @@ class Input {
     protected $value;
     protected $label;
 
-    public function __construct($name, $class, $readonly) {
+    public function __construct($name, $class = '', $readonly = false) {
         $this->name = $name;
         $this->class = $class;
         $this->readonly = $readonly;
@@ -26,12 +26,15 @@ class Input {
         echo "Implementing the Input class directly is foribbben. please use an input field or type";
     }
     
-    private function getClassString(){
+    protected function getClassString(){
         $string = "";
         if(is_array($this->class)){
             foreach($this->class as $class){
                 $string .= $class." ";
             }
+            return $string;
+        }
+        else if(empty($this->class)){
             return $string;
         }
         else{

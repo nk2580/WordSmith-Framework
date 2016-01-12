@@ -17,11 +17,11 @@ class Action {
 	protected $accepted_args = 1;
 
 	public function __construct() {
-		$this->callAddAction( $this->hook, $this->callback, $this->priority, $this->accepted_args );
+		$this->callAction( $this->hook, $this->callback, $this->priority, $this->accepted_args );
 	}
 
-	private function callAddAction( $hook, $callback, $priority, $args ) {
-		add_action( $hook, array( $this, $callback ), $priority = null, $args = null );
+	private function callAction( $hook, $callback, $priority = null, $args = null ) {
+		add_action( $hook, array( $this, $callback ), $priority, $args );
 	}
 
 }

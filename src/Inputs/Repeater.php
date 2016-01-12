@@ -29,11 +29,11 @@ class Repeater extends Input {
         $this->printField();
     }
 
-    private function printField() {
+    protected function printField() {
         echo "Implementing the Input class directly is foribbben. please use an input field or type";
     }
 
-    private function getClassString() {
+    protected function getClassString() {
         $string = "";
         if (is_array($this->class)) {
             foreach ($this->class as $class) {

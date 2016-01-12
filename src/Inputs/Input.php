@@ -42,7 +42,7 @@ class Input {
         }
     }
     
-    public function getLabel(){
+    protected function getLabel(){
         return $this->label;
     }
 

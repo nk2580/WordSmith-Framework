@@ -16,9 +16,10 @@ class Input {
     protected $value;
     protected $label;
 
-    public function __construct($name, $class = '', $readonly = false) {
+    public function __construct($name,$label = '', $class = '', $readonly = false) {
         $this->name = $name;
         $this->class = $class;
+        $this->label = $label;
         $this->readonly = $readonly;
     }
     

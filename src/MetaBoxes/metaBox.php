@@ -50,7 +50,7 @@ class MetaBox {
         foreach ($this->fields as $field) {
             $control = new $field['control']($field['name'], $field['label']);
             if ($control->isFieldValid()) {
-                update_post_meta($post_id, $field['meta-key'], $control->sanitize($_POST[$field['name']]));
+                update_post_meta($post_id, $field['meta-key'], $control->sanitize($_POST[$field['meta-key']]));
             }
         }
     }
@@ -90,7 +90,6 @@ class MetaBox {
     public function content($post) {
         foreach ($this->fields as $field) {
             $value = get_post_meta($post->ID, $field['meta-key'], true);
-            print_r($field['meta-key']);
             $control = new $field['control']($field['meta-key'], $field['label'], $value);
             $control->printField();
         }

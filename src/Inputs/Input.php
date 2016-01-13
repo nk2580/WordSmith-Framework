@@ -35,7 +35,7 @@ class Input {
     public function sanitize() {
         return $this->value;
     }
-
+    
     protected function getClassString() {
         $string = "";
         if (is_array($this->class)) {

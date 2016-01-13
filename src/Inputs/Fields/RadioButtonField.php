@@ -20,7 +20,7 @@ class RadioButtonField extends Input {
     protected $options;
     protected $inline;
 
-    private function printField() {
+    public function printField() {
         $class = $this->getClassString();
         if ($this->inline) {
             echo '<div class="container-inline">';

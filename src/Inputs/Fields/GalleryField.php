@@ -15,10 +15,7 @@ use nk2580\wordsmith\Inputs\Input as Input;
  *
  * @author accounts
  */
-class ImageUploadField extends Input {
-
-    protected $options;
-    protected $inline;
+class GalleryField extends Input {
 
     public function printField() {
         echo '<div class="image-upload">';
@@ -34,7 +31,7 @@ class ImageUploadField extends Input {
         echo '</div>';
     }
 
-    private function add_scripts() {
+    private function add_script() {
         
     }
 

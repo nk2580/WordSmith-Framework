@@ -17,7 +17,7 @@ use nk2580\wordsmith\Inputs\Input as Input;
  */
 class HiddenField extends Input {
 
-    private function printField() {
+    public function printField() {
         $class = $this->getClassString();
         if (!$this->readonly) {
             echo "<input type='hidden' name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="'.$this->value.'" />';

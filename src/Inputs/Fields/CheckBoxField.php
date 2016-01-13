@@ -17,13 +17,21 @@ use nk2580\wordsmith\Inputs\Input as Input;
  */
 class CheckBoxField extends Input {
 
-    private function printField() {
+    public function printField() {
         $class = $this->getClassString();
         if ($this->value == 1) {
             echo "<label for=" . $this->name . " ><input type='checkbox' checked='checked' name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="1" /> '.$this->label.'</lable>';
         } else {
             echo "<label for=" . $this->name . " ><input type='checkbox' name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="1" /> '.$this->label.'</lable>';
         }
+    }
+    
+    public function isFieldValid() {
+            return true;
+    }
+
+    public function sanitize() {
+        return ($this->value);
     }
 
 }

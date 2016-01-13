@@ -48,9 +48,9 @@ class MetaBox {
      */
     public function save($post_id) {
         foreach ($this->fields as $field) {
-            $control = new $field['control']($field['meta-key'], $field['label']);
+            $control = new $field['control']($field['meta-key'], $field['label'],$_POST[$field['meta-key']]);
             if ($control->isFieldValid()) {
-                update_post_meta($post_id, $field['meta-key'], $control->sanitize($_POST[$field['meta-key']]));
+                update_post_meta($post_id, $field['meta-key'], $control->sanitize());
             }
         }
     }

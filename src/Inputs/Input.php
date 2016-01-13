@@ -32,8 +32,8 @@ class Input {
         return true;
     }
 
-    public function sanitize($input) {
-        return sanitize_text_field($input);
+    public function sanitize() {
+        return $this->value;
     }
 
     protected function getClassString() {

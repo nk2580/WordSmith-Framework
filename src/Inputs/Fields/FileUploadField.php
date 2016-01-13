@@ -19,7 +19,8 @@ class FileUploadField extends Input {
 
     public function printField() {
         echo '<div class="image-upload">';
-        echo '</div>';
+echo '<br/>';
+echo '</div>';
     }
 
     private function add_scripts() {

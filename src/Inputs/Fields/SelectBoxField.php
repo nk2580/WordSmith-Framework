@@ -36,6 +36,7 @@ class SelectBoxField extends Input {
             }
         }
         echo '</select></label>';
+        echo '<br/>';
     }
 
     public function isFieldValid() {

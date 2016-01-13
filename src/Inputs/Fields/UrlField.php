@@ -24,6 +24,7 @@ class UrlField extends Input {
         } else {
             echo "<label for=\"" . $this->name . "\" >" . $this->label . " <input type=\"text\" readonly name=\"" . $this->name . "\" class=\"" . $class . "\" id=\"" . $this->name . "\" value=\"" . $this->value . "\" /></label>";
         }
+        echo '<br/>';
     }
 
     public function isFieldValid() {

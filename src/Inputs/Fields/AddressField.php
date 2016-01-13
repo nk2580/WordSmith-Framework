@@ -22,11 +22,11 @@ class AddressField extends Input {
         $class = $this->getClassString();
         $value = unserialize($this->value);
         echo '<div class="address-input">';
-        echo '<label>Line 1 <input type="text" class="'.$class.'" name="' . $this->name . '[line1]" value="'.$value['line1'].'" /></label>';
-        echo '<label>Line 2 <input type="text" class="'.$class.'" name="' . $this->name . '[line2]" value="'.$value['line2'].'" /></label>';
-        echo '<label>City <input type="text" class="'.$class.'" name="' . $this->name . '[city]" value="'.$value['city'].'" /></label>';
-        echo '<label>State <input type="text" class="'.$class.'" name="' . $this->name . '[state]" value="'.$value['state'].'" /></label>';
-        echo '<label>Postal Code <input type="text" class="'.$class.'" name="' . $this->name . '[postcode]" value="'.$value['postcode'].'" /></label>';
+        echo '<label>Line 1 <input type="text" class="'.$class.'" name="' . $this->name . '[line1]" value="'.$value['line1'].'" /></label><br/>';
+        echo '<label>Line 2 <input type="text" class="'.$class.'" name="' . $this->name . '[line2]" value="'.$value['line2'].'" /></label><br/>';
+        echo '<label>City <input type="text" class="'.$class.'" name="' . $this->name . '[city]" value="'.$value['city'].'" /></label><br/>';
+        echo '<label>State <input type="text" class="'.$class.'" name="' . $this->name . '[state]" value="'.$value['state'].'" /></label><br/>';
+        echo '<label>Postal Code <input type="text" class="'.$class.'" name="' . $this->name . '[postcode]" value="'.$value['postcode'].'" /></label><br/>';
         echo '</div>';
     }
     

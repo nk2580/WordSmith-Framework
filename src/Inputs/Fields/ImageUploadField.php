@@ -20,6 +20,7 @@ class ImageUploadField extends Input {
 
     public function printField() {
         echo '<div class="image-upload">';
+        echo '<br/>';
         echo '</div>';
     }
 

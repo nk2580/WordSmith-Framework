@@ -24,6 +24,7 @@ echo'<label for="'.$this->name.'"><input type="email" class="'.$class.'" id="'.$
         } else {
 echo'<label for="'.$this->name.'"><input type="email" readonly class="'.$class.'" id="'.$this->name.'" value="'.$this->value.'" />'.$this->label.'</label>';
         }
+        echo '<br/>';
     }
     
     public function isFieldValid() {

@@ -24,9 +24,7 @@ class CheckBoxField extends Input {
         } else {
             echo '<label for="' . $this->name . '"><input type="checkbox" name="' . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="1" >'.$this->label.'</label>';
         }
-        ?>
-        <?php
-
+        echo '<br/>';
     }
 
     public function isFieldValid() {

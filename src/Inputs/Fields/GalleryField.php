@@ -29,6 +29,7 @@ class GalleryField extends Input {
             echo "<img src='".$this->value."' class='image-preview' />";
         }
         echo '</div>';
+        echo '<br/>';
     }
 
     private function add_script() {

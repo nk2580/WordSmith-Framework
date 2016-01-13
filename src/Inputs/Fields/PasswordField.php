@@ -24,6 +24,7 @@ class PasswordField extends Input {
         } else {
             echo "<label for=" . $this->name . " >".$this->label." <input type='password' readonly name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="'.$this->value.'" /></lable>';
         }
+        echo '<br/>';
     }
 
 }

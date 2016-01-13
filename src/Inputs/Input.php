@@ -49,9 +49,4 @@ class Input {
             return $this->class;
         }
     }
-
-    protected function getLabel() {
-        return $this->label;
-    }
-
 }

@@ -23,6 +23,7 @@ class TextAreaField extends Input {
         echo '<textarea class="' . $class . '" name="' . $this->name . '"  id="' . $this->name . '">';
         echo $this->value;
         echo '</textarea></label>';
+        echo '<br/>';
     }
 
     public function isFieldValid() {

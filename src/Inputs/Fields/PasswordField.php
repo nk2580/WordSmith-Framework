@@ -20,9 +20,9 @@ class PasswordField extends Input {
     public function printField() {
         $class = $this->getClassString();
         if (!$this->readonly) {
-            echo "<label for=" . $this->name . " >".$this->label." <input type='password' name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="'.$this->value.'" /></lable>';
+            echo "<label for=\"" . $this->name . "\" >" . $this->label . " <input type=\"password\" name=\"" . $this->name . "\" class=\"" . $class . "\" id=\"" . $this->name . "\" value=\"" . $this->value . "\" /></label>";
         } else {
-            echo "<label for=" . $this->name . " >".$this->label." <input type='password' readonly name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="'.$this->value.'" /></lable>';
+            echo "<label for=\"" . $this->name . "\" >" . $this->label . " <input type=\"password\" readonly name=\"" . $this->name . "\" class=\"" . $class . "\" id=\"" . $this->name . "\" value=\"" . $this->value . "\" /></label>";
         }
         echo '<br/>';
     }

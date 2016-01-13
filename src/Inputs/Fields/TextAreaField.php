@@ -17,7 +17,7 @@ use nk2580\wordsmith\Inputs\Input as Input;
  */
 class TextAreaField extends Input {
 
-    private function printField() {
+    public function printField() {
         $class = $this->getClassString();
         echo '<label for="' . $this->name . '" >' . $this->label . ' ';
         echo '<textarea class="' . $class . '" name="' . $this->name . '"  id="' . $this->name . '">';

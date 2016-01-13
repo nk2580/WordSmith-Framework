@@ -20,14 +20,17 @@ class CheckBoxField extends Input {
     public function printField() {
         $class = $this->getClassString();
         if ($this->value == 1) {
-            echo "<label for=" . $this->name . " ><input type='checkbox' checked='checked' name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="1" /> '.$this->label.'</lable>';
+            echo '<label for="' . $this->name . '"><input checked="checked" type="checkbox" name="' . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="1" >$label</label>';
         } else {
-            echo "<label for=" . $this->name . " ><input type='checkbox' name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="1" /> '.$this->label.'</lable>';
+            echo '<label for="' . $this->name . '"><input type="checkbox" name="' . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="1" >$label</label>';
         }
+        ?>
+        <?php
+
     }
-    
+
     public function isFieldValid() {
-            return true;
+        return true;
     }
 
     public function sanitize() {

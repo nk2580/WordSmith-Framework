@@ -89,7 +89,8 @@ class MetaBox {
      */
     public function content($post) {
         foreach ($this->fields as $field) {
-            $control = new $field['control']($field['name'], $field['label']);
+            $value = get_post_meta($post->ID,$field['name'],true );
+            $control = new $field['control']($field['name'], $field['label'],$value);
             $control->printField();
         }
     }

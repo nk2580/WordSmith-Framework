@@ -16,42 +16,41 @@ class Input {
     protected $value;
     protected $label;
 
-    public function __construct($name,$label = '', $class = '', $readonly = false) {
+    public function __construct($name, $label = '', $value = '', $class = '', $readonly = false) {
         $this->name = $name;
         $this->class = $class;
+        $this->value = $value;
         $this->label = $label;
         $this->readonly = $readonly;
     }
-    
-    public function printField(){
+
+    public function printField() {
         echo "Implementing the Input class directly is foribbben. please use an input field or type";
     }
-    
-    public function isFieldValid(){
+
+    public function isFieldValid() {
         return true;
     }
 
-    public function sanitize($input){
+    public function sanitize($input) {
         return sanitize_text_field($input);
     }
 
-    protected function getClassString(){
+    protected function getClassString() {
         $string = "";
-        if(is_array($this->class)){
-            foreach($this->class as $class){
-                $string .= $class." ";
+        if (is_array($this->class)) {
+            foreach ($this->class as $class) {
+                $string .= $class . " ";
             }
             return $string;
-        }
-        else if(empty($this->class)){
+        } else if (empty($this->class)) {
             return $string;
-        }
-        else{
+        } else {
             return $this->class;
         }
     }
-    
-    protected function getLabel(){
+
+    protected function getLabel() {
         return $this->label;
     }
 

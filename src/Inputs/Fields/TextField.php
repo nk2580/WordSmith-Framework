@@ -16,15 +16,26 @@ use nk2580\wordsmith\Inputs\Input as Input;
  * @author accounts
  */
 class TextField extends Input {
-    
-    public function printField(){
+
+    public function printField() {
         $class = $this->getClassString();
-        if(!$this->readonly){
-            echo "<label for=\"" . $this->name . "\" >".$this->label." <input type=\"text\" name=\"".$this->name."\" class=\"".$class."\" id=\"".$this->name."\" value=\"".$this->value."\" /></label>";
-        }
-        else{
-            echo "<label for=\"" . $this->name . "\" >".$this->label." <input type=\"text\" readonly name=\"".$this->name."\" class=\"".$class."\" id=\"".$this->name."\" value=\"".$this->value."\" /></label>";
+        if (!$this->readonly) {
+            echo "<label for=\"" . $this->name . "\" >" . $this->label . " <input type=\"text\" name=\"" . $this->name . "\" class=\"" . $class . "\" id=\"" . $this->name . "\" value=\"" . $this->value . "\" /></label>";
+        } else {
+            echo "<label for=\"" . $this->name . "\" >" . $this->label . " <input type=\"text\" readonly name=\"" . $this->name . "\" class=\"" . $class . "\" id=\"" . $this->name . "\" value=\"" . $this->value . "\" /></label>";
         }
     }
-    
+
+    public function isFieldValid() {
+        if (strlen($this->value) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function sanitize() {
+        return sanitize_text_field($this->value);
+    }
+
 }

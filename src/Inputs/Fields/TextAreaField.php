@@ -25,4 +25,16 @@ class TextAreaField extends Input {
         echo '</textarea></label>';
     }
 
+    public function isFieldValid() {
+        if (strlen($this->value) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function sanitize() {
+        return sanitize_text_field($this->value);
+    }
+    
 }

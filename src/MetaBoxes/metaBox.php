@@ -52,6 +52,9 @@ class MetaBox {
             if ($control->isFieldValid()) {
                 update_post_meta($post_id, $field['meta-key'], $control->sanitize());
             }
+            else{
+                return $post_id;
+            }
         }
     }
 

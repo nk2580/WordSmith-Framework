@@ -20,9 +20,9 @@ class EmailField extends Input {
     public function printField() {
         $class = $this->getClassString();
         if (!$this->readonly) {
-echo'<label for="'.$this->name.'"><input type="email" class="'.$class.'" id="'.$this->name.'" value="'.$this->value.'" />'.$this->label.'</label>';
+echo'<label for="'.$this->name.'">'.$this->label.'<input type="email" class="'.$class.'" id="'.$this->name.'" value="'.$this->value.'" /></label>';
         } else {
-echo'<label for="'.$this->name.'"><input type="email" readonly class="'.$class.'" id="'.$this->name.'" value="'.$this->value.'" />'.$this->label.'</label>';
+echo'<label for="'.$this->name.'">'.$this->label.'<input type="email" readonly class="'.$class.'" id="'.$this->name.'" value="'.$this->value.'" /></label>';
         }
         echo '<br/>';
     }

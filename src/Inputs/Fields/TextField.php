@@ -20,10 +20,10 @@ class TextField extends Input {
     public function printField(){
         $class = $this->getClassString();
         if(!$this->readonly){
-            echo "<label for=\"" . $this->name . "\" >".$this->label." <input type=\"text\" name=\"".$this->name."\" class=\"".$class."\" id=\"".$this->name."\ value=\"".$this->value."\" /></label>";
+            echo "<label for=\"" . $this->name . "\" >".$this->label." <input type=\"text\" name=\"".$this->name."\" class=\"".$class."\" id=\"".$this->name."\" value=\"".$this->value."\" /></label>";
         }
         else{
-            echo "<label for=\"" . $this->name . "\" >".$this->label." <input type=\"text\" readonly name=\"".$this->name."\" class=\"".$class."\" id=\"".$this->name."\ value=\"".$this->value."\" /></label>";
+            echo "<label for=\"" . $this->name . "\" >".$this->label." <input type=\"text\" readonly name=\"".$this->name."\" class=\"".$class."\" id=\"".$this->name."\" value=\"".$this->value."\" /></label>";
         }
     }
     

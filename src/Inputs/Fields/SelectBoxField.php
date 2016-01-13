@@ -44,7 +44,7 @@ class SelectBoxField extends Input {
     }
 
     public function sanitize() {
-        return ($this->value);
+        return $this->value;
     }
 
 }

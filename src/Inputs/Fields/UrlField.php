@@ -28,7 +28,7 @@ class UrlField extends Input {
     }
 
     public function isFieldValid() {
-        if (!filter_var($this->value, FILTER_VALIDATE_URL) === false) {
+        if (filter_var($this->value, FILTER_VALIDATE_URL)) {
             return true;
         } else {
             return false;
@@ -36,7 +36,7 @@ class UrlField extends Input {
     }
 
     public function sanitize() {
-        return esc_url($this->value);
+        return ($this->value);
     }
 
 }

@@ -28,7 +28,7 @@ echo'<label for="'.$this->name.'">'.$this->label.'<input type="email" readonly c
     }
     
     public function isFieldValid() {
-        if (!filter_var($this->value, FILTER_VALIDATE_EMAIL) === false) {
+        if (filter_var($this->value, FILTER_VALIDATE_EMAIL)) {
             return true;
         } else {
             return false;
@@ -36,7 +36,7 @@ echo'<label for="'.$this->name.'">'.$this->label.'<input type="email" readonly c
     }
 
     public function sanitize() {
-        return sanitize_email($this->value);
+        return ($this->value);
     }
 
 }

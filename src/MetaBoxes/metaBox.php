@@ -88,10 +88,9 @@ class MetaBox {
      * @param WP_Post $post The post object.
      */
     public function content($post) {
-        print_r($post);
         foreach ($this->fields as $field) {
             $value = get_post_meta($post->ID, $field['name'], true);
-            print_r($value);
+            print_r($field['name']);
             $control = new $field['control']($field['name'], $field['label'], $value);
             $control->printField();
         }

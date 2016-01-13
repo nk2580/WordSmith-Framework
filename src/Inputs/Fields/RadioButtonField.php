@@ -28,9 +28,9 @@ class RadioButtonField extends Input {
         $class = $this->getClassString();
         foreach ($this->options as $label => $value) {
             if ($this->value == $value) {
-echo '<label for="#'.$label.'"><input type="radio" checked="checked" name="'.$this->name.'" class="'.$class.'" id="'.$label.'" value="'.$value.'"/> '.$label.'</label>';
+echo '<label for="'.$this->name.$value.'"><input type="radio" checked="checked" name="'.$this->name.'" class="'.$class.'" id="'.$this->name.$value.'" value="'.$value.'"/> '.$label.'</label>';
             } else {
-echo '<label for="#'.$label.'"><input type="radio"  name="'.$this->name.'" class="'.$class.'" id="'.$label.'" value="'.$value.'"/> '.$label.'</label>';
+echo '<label for="'.$this->name.$value.'"><input type="radio"  name="'.$this->name.'" class="'.$class.'" id="'.$label.'" value="'.$this->name.$value.'"/> '.$label.'</label>';
             }
             echo '<br/>';
         }

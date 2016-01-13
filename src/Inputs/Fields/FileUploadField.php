@@ -18,12 +18,12 @@ use nk2580\wordsmith\Inputs\Input as Input;
 class FileUploadField extends Input {
 
     public function printField() {
-        $class = $this->getClassString();
-        if (!$this->readonly) {
-            echo "<label for=" . $this->name . " >" . $this->label . " <input type='text' name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="' . $this->value . "' /><a data-toggle='image' data-target='#" . $this->name . "'>Select image</a></lable>";
-        } else {
-            echo "<label for=" . $this->name . " >" . $this->label . " <input type='text' readonly name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="' . $this->value . "' /><a data-toggle='image' data-target='#" . $this->name . "'>Select image</a></lable>";
-        }
+        echo '<div class="image-upload">';
+        echo '</div>';
+    }
+
+    private function add_scripts() {
+        
     }
 
 }

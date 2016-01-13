@@ -18,8 +18,13 @@ use nk2580\wordsmith\Inputs\Input as Input;
 class SelectBoxField extends Input {
 
     protected $options;
+    
+    public function __construct($name, $options, $label = '', $value = '', $class = '', $readonly = false) {
+        parent::__construct($name, $label, $value, $class, $readonly);
+        $this->options = $options;
+    }
 
-    private function printField() {
+    public function printField() {
         $class = $this->getClassString();
         echo '<label for="' . $this->name . '" >'.$this->label.' ';
         echo '<select class="' . $class . '" name="' . $this->name . '"  id="' . $this->name . '">';
@@ -31,6 +36,18 @@ class SelectBoxField extends Input {
             }
         }
         echo '</select></label>';
+    }
+
+    public function isFieldValid() {
+        if (strlen($this->value) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function sanitize() {
+        return sanitize_text_field($this->value);
     }
 
 }

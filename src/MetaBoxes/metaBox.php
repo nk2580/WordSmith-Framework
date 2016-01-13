@@ -16,9 +16,8 @@ class MetaBox {
     protected $title;
     protected $context = 'side';
     protected $priority = 'default';
-    
     protected $fields = [
-        ['label' => "Exmple Field", 'meta-key' => "example_meta", 'control' => "nk2580\wordsmith\Inputs\Fields\TextField" ],
+        ['label' => "Exmple Field", 'meta-key' => "example_meta", 'control' => "nk2580\wordsmith\Inputs\Fields\TextField"],
     ];
 
     /**
@@ -30,7 +29,7 @@ class MetaBox {
 
     public function init() {
         add_action('add_meta_boxes', array($this, 'add_boxes'));
-        add_action('save_post', array($this, 'save'));
+        add_action('save_post', array($this, 'save_box_content'));
     }
 
     /**
@@ -48,28 +47,30 @@ class MetaBox {
      * @param int $post_id The ID of the post being saved.
      */
     public function save($post_id) {
+        foreach ($this->fields as $field) {
+            $control = new $field['control']($field['name'], $field['label']);
+            if ($control->isFieldValid()) {
+                update_post_meta($post_id, $field['meta-key'], $control->sanitize($_POST[$field['name']]));
+            }
+        }
+    }
 
-        /*
-         * We need to verify this came from the our screen and with proper authorization,
-         * because save_post can be triggered at other times.
-         */
+    /**
+     * vefiy we can save the data.
+     */
+    public function verify_save($post_id) {
 
-        // Check if our nonce is set.
-        if (!isset($_POST['myplugin_inner_custom_box_nonce']))
+        if (!isset($_POST[$this->name . '_box_nonce']))
             return $post_id;
 
-        $nonce = $_POST['myplugin_inner_custom_box_nonce'];
+        $nonce = $_POST[$this->name . '_box_nonce'];
 
-        // Verify that the nonce is valid.
-        if (!wp_verify_nonce($nonce, 'myplugin_inner_custom_box'))
+        if (!wp_verify_nonce($nonce, $this->name . '_box'))
             return $post_id;
 
-        // If this is an autosave, our form has not been submitted,
-        //     so we don't want to do anything.
         if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
             return $post_id;
 
-        // Check the user's permissions.
         if ('page' == $_POST['post_type']) {
 
             if (!current_user_can('edit_page', $post_id))
@@ -79,14 +80,6 @@ class MetaBox {
             if (!current_user_can('edit_post', $post_id))
                 return $post_id;
         }
-
-        /* OK, its safe for us to save the data now. */
-
-        // Sanitize the user input.
-        $mydata = sanitize_text_field($_POST['myplugin_new_field']);
-
-        // Update the meta field.
-        update_post_meta($post_id, '_my_meta_value_key', $mydata);
     }
 
     /**
@@ -96,7 +89,7 @@ class MetaBox {
      */
     public function content($post) {
         foreach ($this->fields as $field) {
-            $control = new $field['control']($field['name'],$field['label']);
+            $control = new $field['control']($field['name'], $field['label']);
             $control->printField();
         }
     }
@@ -116,6 +109,15 @@ class MetaBox {
 
     public function load_box_content($post) {
         $this->add_nonce();
+        $this->content($post);
+    }
+
+    /*
+     * load the content of the box
+     */
+
+    public function save_box_content($post_id) {
+        $this->verify_save($post_id);
         $this->content($post);
     }
 

@@ -27,6 +27,14 @@ class Input {
         echo "Implementing the Input class directly is foribbben. please use an input field or type";
     }
     
+    public function isFieldValid(){
+        return true;
+    }
+
+    public function sanitize($input){
+        return sanitize_text_field($input);
+    }
+
     protected function getClassString(){
         $string = "";
         if(is_array($this->class)){

@@ -18,13 +18,14 @@ use nk2580\wordsmith\Inputs\Input as Input;
 class RadioButtonField extends Input {
 
     protected $options;
-    protected $inline;
+
+    public function __construct($name, $options, $label = '', $value = '', $class = '', $readonly = false) {
+        parent::__construct($name, $label, $value, $class, $readonly);
+        $this->options = $options;
+    }
 
     public function printField() {
         $class = $this->getClassString();
-        if ($this->inline) {
-            echo '<div class="container-inline">';
-        }
         foreach ($this->options as $label => $value) {
             if ($this->value == $value) {
                 echo "<label for='" . $this->name . "' ><input type='radio' name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="' . $value . '" /> ' . $label . '</label>';
@@ -32,9 +33,14 @@ class RadioButtonField extends Input {
                 echo "<label for='" . $this->name . "' ><input readonly type='radio' name='" . $this->name . '" class="' . $class . '" id="' . $this->name . '" value="' . $value . '" /> ' . $label . '</label>';
             }
         }
-        if ($this->inline) {
-            echo '</div>';
-        }
+    }
+
+    public function isFieldValid() {
+        return true;
+    }
+
+    public function sanitize() {
+        return ($this->value);
     }
 
 }

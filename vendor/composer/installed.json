@@ -318,144 +318,6 @@
         "homepage": "http://laravel.com"
     },
     {
-        "name": "league/flysystem",
-        "version": "1.0.15",
-        "version_normalized": "1.0.15.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/thephpleague/flysystem.git",
-            "reference": "31525caf9e8772683672fefd8a1ca0c0736020f4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/31525caf9e8772683672fefd8a1ca0c0736020f4",
-            "reference": "31525caf9e8772683672fefd8a1ca0c0736020f4",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "conflict": {
-            "league/flysystem-sftp": "<1.0.6"
-        },
-        "require-dev": {
-            "ext-fileinfo": "*",
-            "mockery/mockery": "~0.9",
-            "phpspec/phpspec": "^2.2",
-            "phpspec/prophecy-phpunit": "~1.0",
-            "phpunit/phpunit": "~4.1"
-        },
-        "suggest": {
-            "ext-fileinfo": "Required for MimeType",
-            "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
-            "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
-            "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
-            "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
-            "league/flysystem-copy": "Allows you to use Copy.com storage",
-            "league/flysystem-dropbox": "Allows you to use Dropbox storage",
-            "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
-            "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
-            "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
-            "league/flysystem-webdav": "Allows you to use WebDAV storage",
-            "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter"
-        },
-        "time": "2015-09-30 22:26:59",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "League\\Flysystem\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Frank de Jonge",
-                "email": "info@frenky.net"
-            }
-        ],
-        "description": "Filesystem abstraction: Many filesystems, one API.",
-        "keywords": [
-            "Cloud Files",
-            "WebDAV",
-            "abstraction",
-            "aws",
-            "cloud",
-            "copy.com",
-            "dropbox",
-            "file systems",
-            "files",
-            "filesystem",
-            "filesystems",
-            "ftp",
-            "rackspace",
-            "remote",
-            "s3",
-            "sftp",
-            "storage"
-        ]
-    },
-    {
-        "name": "symfony/finder",
-        "version": "v2.6.11",
-        "version_normalized": "2.6.11.0",
-        "target-dir": "Symfony/Component/Finder",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Finder.git",
-            "reference": "203a10f928ae30176deeba33512999233181dd28"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Finder/zipball/203a10f928ae30176deeba33512999233181dd28",
-            "reference": "203a10f928ae30176deeba33512999233181dd28",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/phpunit-bridge": "~2.7"
-        },
-        "time": "2015-07-09 16:02:48",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Finder\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Finder Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "illuminate/filesystem",
         "version": "v5.0.33",
         "version_normalized": "5.0.33.0",
@@ -556,115 +418,6 @@
         "homepage": "http://laravel.com"
     },
     {
-        "name": "philo/laravel-blade",
-        "version": "v3.0",
-        "version_normalized": "3.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/PhiloNL/Laravel-Blade.git",
-            "reference": "728be672354bdd377da56394e699112ddfa0628b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/PhiloNL/Laravel-Blade/zipball/728be672354bdd377da56394e699112ddfa0628b",
-            "reference": "728be672354bdd377da56394e699112ddfa0628b",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/events": "~5",
-            "illuminate/view": "~5"
-        },
-        "time": "2015-04-18 21:03:31",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Philo\\Blade\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Philo Hermans",
-                "email": "me@philohermans.com"
-            }
-        ],
-        "description": "Use the simple and yet powerful Laravel Blade templating engine as a standalone component.",
-        "keywords": [
-            "blade",
-            "laravel"
-        ]
-    },
-    {
-        "name": "symfony/security-core",
-        "version": "v2.6.11",
-        "version_normalized": "2.6.11.0",
-        "target-dir": "Symfony/Component/Security/Core",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/security-core.git",
-            "reference": "05f58bb3814e8a853332dc448e3b7addaa87679c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/security-core/zipball/05f58bb3814e8a853332dc448e3b7addaa87679c",
-            "reference": "05f58bb3814e8a853332dc448e3b7addaa87679c",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "ircmaxell/password-compat": "1.0.*",
-            "psr/log": "~1.0",
-            "symfony/event-dispatcher": "~2.1",
-            "symfony/expression-language": "~2.6",
-            "symfony/http-foundation": "~2.4",
-            "symfony/phpunit-bridge": "~2.7",
-            "symfony/translation": "~2.0,>=2.0.5",
-            "symfony/validator": "~2.5,>=2.5.5"
-        },
-        "suggest": {
-            "ircmaxell/password-compat": "For using the BCrypt password encoder in PHP <5.5",
-            "symfony/event-dispatcher": "",
-            "symfony/expression-language": "For using the expression voter",
-            "symfony/http-foundation": "",
-            "symfony/validator": "For using the user password constraint"
-        },
-        "time": "2015-07-22 10:08:40",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Security\\Core\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Security Component - Core Library",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "illuminate/encryption",
         "version": "5.0.x-dev",
         "version_normalized": "5.0.9999999.9999999-dev",
@@ -713,54 +466,6 @@
         "homepage": "http://laravel.com"
     },
     {
-        "name": "symfony/process",
-        "version": "v2.7.6",
-        "version_normalized": "2.7.6.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/process.git",
-            "reference": "4a959dd4e19c2c5d7512689413921e0a74386ec7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/process/zipball/4a959dd4e19c2c5d7512689413921e0a74386ec7",
-            "reference": "4a959dd4e19c2c5d7512689413921e0a74386ec7",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9"
-        },
-        "time": "2015-10-23 14:47:27",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.7-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Process\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Process Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "knplabs/knp-snappy",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -777,7 +482,7 @@
         },
         "require": {
             "php": ">=5.3.3",
-            "symfony/process": "~2.1"
+            "symfony/process": "~2.3|~3.0"
         },
         "require-dev": {
             "phpunit/phpunit": "4.7.*"
@@ -819,6 +524,439 @@
         "keywords": [
             "knp",
             "knplabs",
+            "pdf",
+            "snapshot",
+            "thumbnail",
+            "wkhtmltopdf"
+        ]
+    },
+    {
+        "name": "symfony/finder",
+        "version": "v2.6.13",
+        "version_normalized": "2.6.13.0",
+        "target-dir": "Symfony/Component/Finder",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/finder.git",
+            "reference": "203a10f928ae30176deeba33512999233181dd28"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/finder/zipball/203a10f928ae30176deeba33512999233181dd28",
+            "reference": "203a10f928ae30176deeba33512999233181dd28",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "~2.7"
+        },
+        "time": "2015-07-09 16:02:48",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Finder\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Finder Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "league/flysystem",
+        "version": "1.0.16",
+        "version_normalized": "1.0.16.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/flysystem.git",
+            "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/183e1a610664baf6dcd6fceda415baf43cbdc031",
+            "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "conflict": {
+            "league/flysystem-sftp": "<1.0.6"
+        },
+        "require-dev": {
+            "ext-fileinfo": "*",
+            "mockery/mockery": "~0.9",
+            "phpspec/phpspec": "^2.2",
+            "phpspec/prophecy-phpunit": "~1.0",
+            "phpunit/phpunit": "~4.8"
+        },
+        "suggest": {
+            "ext-fileinfo": "Required for MimeType",
+            "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
+            "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
+            "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
+            "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
+            "league/flysystem-copy": "Allows you to use Copy.com storage",
+            "league/flysystem-dropbox": "Allows you to use Dropbox storage",
+            "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
+            "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
+            "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
+            "league/flysystem-webdav": "Allows you to use WebDAV storage",
+            "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter"
+        },
+        "time": "2015-12-19 20:16:43",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Flysystem\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Frank de Jonge",
+                "email": "info@frenky.net"
+            }
+        ],
+        "description": "Filesystem abstraction: Many filesystems, one API.",
+        "keywords": [
+            "Cloud Files",
+            "WebDAV",
+            "abstraction",
+            "aws",
+            "cloud",
+            "copy.com",
+            "dropbox",
+            "file systems",
+            "files",
+            "filesystem",
+            "filesystems",
+            "ftp",
+            "rackspace",
+            "remote",
+            "s3",
+            "sftp",
+            "storage"
+        ]
+    },
+    {
+        "name": "philo/laravel-blade",
+        "version": "v3.1",
+        "version_normalized": "3.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PhiloNL/Laravel-Blade.git",
+            "reference": "3f0ce2ee198604c53c25188110e6d7b5e887527a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/PhiloNL/Laravel-Blade/zipball/3f0ce2ee198604c53c25188110e6d7b5e887527a",
+            "reference": "3f0ce2ee198604c53c25188110e6d7b5e887527a",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/events": "~5",
+            "illuminate/view": "~5"
+        },
+        "time": "2015-12-04 09:42:42",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Philo\\Blade\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Philo Hermans",
+                "email": "me@philohermans.com"
+            }
+        ],
+        "description": "Use the simple and yet powerful Laravel Blade templating engine as a standalone component.",
+        "keywords": [
+            "blade",
+            "laravel"
+        ]
+    },
+    {
+        "name": "paragonie/random_compat",
+        "version": "1.1.5",
+        "version_normalized": "1.1.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/paragonie/random_compat.git",
+            "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/paragonie/random_compat/zipball/dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
+            "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*|5.*"
+        },
+        "suggest": {
+            "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+        },
+        "time": "2016-01-06 13:31:20",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/random.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Paragon Initiative Enterprises",
+                "email": "security@paragonie.com",
+                "homepage": "https://paragonie.com"
+            }
+        ],
+        "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+        "keywords": [
+            "csprng",
+            "pseudorandom",
+            "random"
+        ]
+    },
+    {
+        "name": "symfony/security-core",
+        "version": "v2.6.13",
+        "version_normalized": "2.6.13.0",
+        "target-dir": "Symfony/Component/Security/Core",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/security-core.git",
+            "reference": "813cf2aaacccbbe1a4705aef8d4ac0d79d993a76"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/security-core/zipball/813cf2aaacccbbe1a4705aef8d4ac0d79d993a76",
+            "reference": "813cf2aaacccbbe1a4705aef8d4ac0d79d993a76",
+            "shasum": ""
+        },
+        "require": {
+            "paragonie/random_compat": "~1.0",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "ircmaxell/password-compat": "1.0.*",
+            "psr/log": "~1.0",
+            "symfony/event-dispatcher": "~2.1",
+            "symfony/expression-language": "~2.6",
+            "symfony/http-foundation": "~2.4",
+            "symfony/phpunit-bridge": "~2.7",
+            "symfony/translation": "~2.0,>=2.0.5",
+            "symfony/validator": "~2.5,>=2.5.5"
+        },
+        "suggest": {
+            "ircmaxell/password-compat": "For using the BCrypt password encoder in PHP <5.5",
+            "symfony/event-dispatcher": "",
+            "symfony/expression-language": "For using the expression voter",
+            "symfony/http-foundation": "",
+            "symfony/validator": "For using the user password constraint"
+        },
+        "time": "2016-01-14 09:04:34",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Security\\Core\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Security Component - Core Library",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/process",
+        "version": "v2.8.2",
+        "version_normalized": "2.8.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/process.git",
+            "reference": "6f1979c3b0f4c22c77a8a8971afaa7dd07f082ac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/process/zipball/6f1979c3b0f4c22c77a8a8971afaa7dd07f082ac",
+            "reference": "6f1979c3b0f4c22c77a8a8971afaa7dd07f082ac",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "time": "2016-01-06 09:59:23",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Process\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Process Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "h4cc/wkhtmltopdf-amd64",
+        "version": "0.12.2.1",
+        "version_normalized": "0.12.2.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/h4cc/wkhtmltopdf-amd64.git",
+            "reference": "9ea617154cf88b81c7c0f5e5fa2d2f731ba0ae6c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/h4cc/wkhtmltopdf-amd64/zipball/9ea617154cf88b81c7c0f5e5fa2d2f731ba0ae6c",
+            "reference": "9ea617154cf88b81c7c0f5e5fa2d2f731ba0ae6c",
+            "shasum": ""
+        },
+        "time": "2015-01-22 08:01:37",
+        "bin": [
+            "bin/wkhtmltopdf-amd64"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL Version 3"
+        ],
+        "authors": [
+            {
+                "name": "Julius Beckmann",
+                "email": "github@h4cc.de"
+            }
+        ],
+        "description": "Convert html to pdf using webkit (qtwebkit). Static linked linux binary for amd64 systems.",
+        "homepage": "http://wkhtmltopdf.org/",
+        "keywords": [
+            "binary",
+            "convert",
+            "pdf",
+            "snapshot",
+            "thumbnail",
+            "wkhtmltopdf"
+        ]
+    },
+    {
+        "name": "h4cc/wkhtmltopdf-i386",
+        "version": "0.12.2.1",
+        "version_normalized": "0.12.2.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/h4cc/wkhtmltopdf-i386.git",
+            "reference": "9fac188d05e0893393e8c69c59a19caa8376f8ec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/h4cc/wkhtmltopdf-i386/zipball/9fac188d05e0893393e8c69c59a19caa8376f8ec",
+            "reference": "9fac188d05e0893393e8c69c59a19caa8376f8ec",
+            "shasum": ""
+        },
+        "time": "2015-01-22 07:59:36",
+        "bin": [
+            "bin/wkhtmltopdf-i386"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL Version 3"
+        ],
+        "authors": [
+            {
+                "name": "Julius Beckmann",
+                "email": "github@h4cc.de"
+            }
+        ],
+        "description": "Convert html to pdf using webkit (qtwebkit). Static linked linux binary for i386 systems.",
+        "homepage": "http://wkhtmltopdf.org/",
+        "keywords": [
+            "binary",
+            "convert",
             "pdf",
             "snapshot",
             "thumbnail",

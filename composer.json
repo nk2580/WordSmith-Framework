@@ -18,7 +18,8 @@
         "h4cc/wkhtmltopdf-i386":"~0.12",
         "wemersonjanuario/wkhtmltopdf-windows": "~0.12",
         "h4cc/wkhtmltoimage-amd64":"~0.12",
-        "h4cc/wkhtmltoimage-i386":"~0.12"
+        "h4cc/wkhtmltoimage-i386":"~0.12",
+        "danielstjules/stringy": "~2.2"
     },
     "autoload": {
         "psr-4": {

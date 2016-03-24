@@ -27,7 +27,7 @@ class UserModel extends Model {
         $models = false;
         $users = get_users(array('role' => self::$UserRole));
         foreach ($users as $u) {
-            $model = new $this;
+            $model = new self;
             $model->ID = $u->ID;
             $model->fetchData();
             $models[] = $model;
@@ -43,7 +43,7 @@ class UserModel extends Model {
      */
     public static function find($ID) {
         $model = false;
-        $models = $this->all();
+        $models = self::all();
         foreach ($models as $m) {
             if ($m->ID == $ID) {
                 $model = $m;
@@ -62,7 +62,7 @@ class UserModel extends Model {
      */
     public static function findBy($key, $value) {
         $model = false;
-        $models = $this->all();
+        $models = self::all();
         foreach ($models as $m) {
             if ($m->$key == $value) {
                 $model = $m;

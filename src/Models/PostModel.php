@@ -27,7 +27,7 @@ class PostModel extends Model {
         $models = false;
         $posts = get_posts(array('post_type' => self::$postType, 'post_status' => 'publish'));
         foreach ($posts as $p) {
-            $model = new $this;
+            $model = new self;
             $model->ID = $p->ID;
             $model->fetchData();
             $models[] = $model;
@@ -43,7 +43,7 @@ class PostModel extends Model {
      */
     public static function find($ID) {
         $model = false;
-        $models = $this->all();
+        $models = self::all();
         foreach ($models as $m) {
             if ($m->ID == $ID) {
                 $model = $m;
@@ -62,7 +62,7 @@ class PostModel extends Model {
      */
     public static function findBy($key, $value) {
         $model = false;
-        $models = $this->all();
+        $models = self::all();
         foreach ($models as $m) {
             if ($m->$key == $value) {
                 $model = $m;

@@ -16,7 +16,7 @@ namespace nk2580\wordsmith\Models;
 class UserModel extends Model {
 
     public $ID;
-    private $UserRole;
+    static $UserRole;
 
     /**
      * get all model items in an array
@@ -25,7 +25,7 @@ class UserModel extends Model {
      */
     public static function all() {
         $models = false;
-        $users = get_users(array('role' => $this->UserRole));
+        $users = get_users(array('role' => self::$UserRole));
         foreach ($users as $u) {
             $model = new $this;
             $model->ID = $u->ID;
@@ -75,10 +75,10 @@ class UserModel extends Model {
     /**
      * Save a model to wordpress
      */
-    public static function save() {
+    public function save() {
         $post = array(
             'ID' => $this->ID, // Are you updating an existing post?
-            'role' => $this->UserRole // Default 'post'.
+            'role' => self::$UserRole // Default 'post'.
         );
         $post_id = wp_insert_user($post);
         if (!is_wp_error($post_id)) {

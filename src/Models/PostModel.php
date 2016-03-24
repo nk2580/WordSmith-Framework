@@ -16,7 +16,7 @@ namespace nk2580\wordsmith\Models;
 class PostModel extends Model {
 
     public $ID;
-    private $postType;
+    static $postType;
 
     /**
      * get an array of all model items
@@ -25,7 +25,7 @@ class PostModel extends Model {
      */
     public static function all() {
         $models = false;
-        $posts = get_posts(array('post_type' => $this->postType, 'post_status' => 'publish'));
+        $posts = get_posts(array('post_type' => self::$postType, 'post_status' => 'publish'));
         foreach ($posts as $p) {
             $model = new $this;
             $model->ID = $p->ID;
@@ -75,11 +75,11 @@ class PostModel extends Model {
     /**
      * Save a model to wordpress
      */
-    public static function save() {
+    public function save() {
         $post = array(
             'ID' => $this->ID, // Are you updating an existing post?
             'post_status' => 'publish', // Default 'draft'.
-            'post_type' => $this->postType // Default 'post'.
+            'post_type' => self::$postType // Default 'post'.
         );
         $post_id = wp_update_post($post, true);
         if (!is_wp_error($post_id)) {

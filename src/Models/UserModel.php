@@ -25,9 +25,9 @@ class UserModel extends Model {
      */
     public static function all() {
         $models = false;
-        $users = get_users(array('role' => self::$UserRole));
+        $users = get_users(array('role' => static::$UserRole));
         foreach ($users as $u) {
-            $model = new self;
+            $model = new static;
             $model->ID = $u->ID;
             $model->fetchData();
             $models[] = $model;
@@ -43,7 +43,7 @@ class UserModel extends Model {
      */
     public static function find($ID) {
         $model = false;
-        $models = self::all();
+        $models = static::all();
         foreach ($models as $m) {
             if ($m->ID == $ID) {
                 $model = $m;
@@ -62,7 +62,7 @@ class UserModel extends Model {
      */
     public static function findBy($key, $value) {
         $model = false;
-        $models = self::all();
+        $models = static::all();
         foreach ($models as $m) {
             if ($m->$key == $value) {
                 $model = $m;
@@ -78,7 +78,7 @@ class UserModel extends Model {
     public function save() {
         $post = array(
             'ID' => $this->ID, // Are you updating an existing post?
-            'role' => self::$UserRole // Default 'post'.
+            'role' => static::$UserRole // Default 'post'.
         );
         $post_id = wp_insert_user($post);
         if (!is_wp_error($post_id)) {

@@ -25,9 +25,9 @@ class PostModel extends Model {
      */
     public static function all() {
         $models = false;
-        $posts = get_posts(array('post_type' => self::$postType, 'post_status' => 'publish'));
+        $posts = get_posts(array('post_type' => static::$postType, 'post_status' => 'publish'));
         foreach ($posts as $p) {
-            $model = new self;
+            $model = new static;
             $model->ID = $p->ID;
             $model->fetchData();
             $models[] = $model;
@@ -43,7 +43,7 @@ class PostModel extends Model {
      */
     public static function find($ID) {
         $model = false;
-        $models = self::all();
+        $models = static::all();
         foreach ($models as $m) {
             if ($m->ID == $ID) {
                 $model = $m;
@@ -62,7 +62,7 @@ class PostModel extends Model {
      */
     public static function findBy($key, $value) {
         $model = false;
-        $models = self::all();
+        $models = static::all();
         foreach ($models as $m) {
             if ($m->$key == $value) {
                 $model = $m;
@@ -79,7 +79,7 @@ class PostModel extends Model {
         $post = array(
             'ID' => $this->ID, // Are you updating an existing post?
             'post_status' => 'publish', // Default 'draft'.
-            'post_type' => self::$postType // Default 'post'.
+            'post_type' => static::$postType // Default 'post'.
         );
         $post_id = wp_update_post($post, true);
         if (!is_wp_error($post_id)) {

@@ -98,7 +98,7 @@ class Route {
 
     private function setupParams($request) {
         $names = array();
-        preg_match('/\{([a-zA-Z0-9]+)\}/' , $request , $names);
+        preg_match('/\{(.*?)\}/' , $this->uri , $names);
         $params = array();
         preg_match($this->regexURI() , $request , $params);
         print_r($names);

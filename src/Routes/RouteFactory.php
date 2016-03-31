@@ -47,7 +47,7 @@ class RouteFactory {
     }
 
     public static function routeGroups() {
-        global $_cc_routes;
+        $_cc_routes = $GLOBALS['_cc_routes'];
         return $_cc_routes;
     }
 

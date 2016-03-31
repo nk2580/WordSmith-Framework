@@ -49,11 +49,13 @@ class RouteFactory {
     public static function all() {
         return $GLOBALS['_cc_routes'];
     }
-    
+
     public static function init() {
-        if(!is_array($GLOBALS['_cc_routes'])){
-            $GLOBALS['_cc_routes'] = [];
-        }
+        add_action('init', function() {
+            if (!is_array($GLOBALS['_cc_routes'])) {
+                $GLOBALS['_cc_routes'] = [];
+            }
+        });
     }
 
 }

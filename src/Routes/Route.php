@@ -62,7 +62,7 @@ class Route {
 
     public function invoke($request) {
         if ($this->hasParameters()) {
-            $this->gatherParams($request);
+            $this->setupParams($request);
         }
         /*
           $parts = $pieces = explode("@", $this->action);
@@ -76,11 +76,13 @@ class Route {
     }
 
     public function matchesRequest($request) {
-        if (!$this->hasParameters() && $request === $this->getURI()) {
+        if ($request === $this->getURI()) {
             return true;
-        } else {
-            echo $this->regexURI();
+        } else if($this->hasParameters()) {
             return preg_match($this->regexURI(), $this->request);
+        }
+        else{
+            return false;
         }
     }
 

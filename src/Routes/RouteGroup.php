@@ -41,7 +41,7 @@ class RouteGroup {
         if (!empty($route) && $route->validateMethod()) {
             $route->invoke($this->request);
         } else {
-            echo "No route Was Defined";
+            echo "No Route Was Defined";
         }
     }
 

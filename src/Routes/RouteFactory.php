@@ -17,7 +17,7 @@ class RouteFactory {
 
     public static function fetchGroup($group) {
         $status = false;
-        $groups = self::routeGroups();
+        $groups = RouteFactory::all();
         if (!empty($groups)) {
             foreach ($groups as $g) {
                 if ($g->name == $group) {
@@ -37,16 +37,16 @@ class RouteFactory {
 
     public static function addRoute(Route $route) {
         $group = $route->getGroup();
-        $RouteGroup = self::fetchGroup($group);
+        $RouteGroup = RouteFactory::fetchGroup($group);
         if (!$RouteGroup) {
-            $g = self::createGroup($group);
+            $g = RouteFactory::createGroup($group);
             $g->add($route);
         } else {
             $RouteGroup->add($route);
         }
     }
 
-    public static function routeGroups() {
+    public static function all() {
         return $GLOBALS['_cc_routes'];
     }
     

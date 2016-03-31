@@ -57,7 +57,7 @@ class RouteFactory {
         }
     }
     
-    public static function implementRouteGroup($group, $endpint){
+    public static function implementRouteGroup($group, $endpint, $namespace = ""){
         $obj = RouteFactory::fetchGroup($group);
         $obj->run($endpint);
     }

@@ -61,18 +61,16 @@ class Route {
     }
 
     public function invoke($request) {
+        $parts = $pieces = explode("@", $this->action);
+        $class = $parts[0];
+        $method = $parts[1];
+        $obj = new $class();
         if ($this->hasParameters()) {
             $this->setupParams($request);
+            call_user_func_array(array($obj, $method), $this->parameters);
+        } else {
+            $obj->$method();
         }
-        /*
-          $parts = $pieces = explode("@", $this->action);
-          $class = $parts[0];
-          $method = $parts[1];
-          $obj = new $class();
-          $obj->$method();
-         * 
-         */
-        print_r($this);
     }
 
     public function matchesRequest($request) {
@@ -102,7 +100,7 @@ class Route {
         preg_match($this->regexURI(), $request, $params);
         unset($params[0]);
         unset($names[0]);
-        foreach($names as $index => $name){
+        foreach ($names as $index => $name) {
             $this->parameters[$name] = $params[$index];
         }
     }

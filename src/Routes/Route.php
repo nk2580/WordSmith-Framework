@@ -60,9 +60,9 @@ class Route {
         return ($_SERVER['REQUEST_METHOD'] === $this->method);
     }
 
-    public function invoke() {
+    public function invoke($request) {
         if ($this->hasParameters()) {
-            $this->gatherParams();
+            $this->gatherParams($request);
         }
         /*
           $parts = $pieces = explode("@", $this->action);
@@ -93,10 +93,10 @@ class Route {
         return $s;
     }
 
-    private function setupParams() {
-        global $wp;
+    private function setupParams($request) {
         $matches = array();
-        preg_match($this->regexURI(), );
+        preg_match($this->regexURI() , $request , $matches);
+        $this->parameters = $matches;
     }
 
 }

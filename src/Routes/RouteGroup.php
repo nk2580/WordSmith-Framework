@@ -39,7 +39,7 @@ class RouteGroup {
         $this->parseRequest();
         $route = $this->determineRoute();
         if (!empty($route) && $route->validateMethod()) {
-            $route->invoke();
+            $route->invoke($this->request);
         } else {
             throw new \Symfony\Component\Routing\Exception\RouteNotFoundException();
         }

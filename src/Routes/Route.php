@@ -97,13 +97,12 @@ class Route {
     }
 
     private function setupParams($request) {
-        $matches = array();
-        preg_match($this->regexURI() , $request , $matches);
-        $this->parameters = $matches;
+        $names = array();
+        preg_match('/\{(.*?)\}/' , $request , $names);
+        $params = array();
+        preg_match($this->regexURI() , $request , $params);
+        print_r($names);
+        print_r($params);
     }
 
 }
-/*
- * /\/clients\/([a-zA-Z0-9]+)$/
- * /\/clients\/([a-zA-Z0-9]+)$/
- */

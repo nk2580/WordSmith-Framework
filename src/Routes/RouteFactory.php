@@ -47,7 +47,7 @@ class RouteFactory {
     }
 
     public static function all() {
-        return $_cc_routes;
+        return $GLOBALS['_cc_routes'];
     }
 
     public static function init() {

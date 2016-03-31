@@ -61,15 +61,19 @@ class Route {
     }
 
     public function invoke($request) {
-        $parts = $pieces = explode("@", $this->action);
-        $class = $parts[0];
-        $method = $parts[1];
-        $obj = new $class();
-        if ($this->hasParameters()) {
-            $this->setupParams($request);
-            call_user_func_array(array($obj, $method), $this->parameters);
+        if (is_object($this->action) && ($this->action instanceof Closure)) {
+            $this->action();
         } else {
-            $obj->$method();
+            $parts = $pieces = explode("@", $this->action);
+            $class = $parts[0];
+            $method = $parts[1];
+            $obj = new $class();
+            if ($this->hasParameters()) {
+                $this->setupParams($request);
+                call_user_func_array(array($obj, $method), $this->parameters);
+            } else {
+                $obj->$method();
+            }
         }
     }
 

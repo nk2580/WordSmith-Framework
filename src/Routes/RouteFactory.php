@@ -51,11 +51,9 @@ class RouteFactory {
     }
 
     public static function init() {
-        add_action('init', function() {
             if (!is_array($GLOBALS['_cc_routes'])) {
                 $GLOBALS['_cc_routes'] = [];
             }
-        });
     }
 
 }

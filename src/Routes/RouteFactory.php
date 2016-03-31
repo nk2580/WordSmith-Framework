@@ -56,5 +56,10 @@ class RouteFactory {
             $GLOBALS['_cc_routes'] = [];
         }
     }
+    
+    public static function implementRouteGroup($group){
+        $obj = RouteFactory::fetchGroup($group);
+        $obj->run();
+    }
 
 }

@@ -31,5 +31,20 @@ class RouteGroup {
     public function routes(){
         return $this->routes;
     }
+    
+    public function run(){
+        $request = $this->parseRequest();
+        print_r($request);
+        //evaluate the uri to a route.
+        //validate the method is accepted.
+        //initialize the corresponding class
+        //run the method defined by that class
+    }
+    
+    private function parseRequest(){
+        global $wp;
+        return str_replace('contractcloud/api/', '', $wp->request);
+    }
+
 
 }

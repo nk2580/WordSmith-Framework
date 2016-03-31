@@ -9,6 +9,7 @@
 namespace nk2580\wordsmith\Routes;
 
 use nk2580\wordsmith\Routes\Route;
+use nk2580\wordsmith\Utillities\JsonException;
 
 /**
  * Description of RouteGroup
@@ -41,7 +42,7 @@ class RouteGroup {
         if (!empty($route) && $route->validateMethod()) {
             $route->invoke($this->request);
         } else {
-            echo "No Route Was Defined";
+            JsonException::show(404, 'The URI you requested is invalid');
         }
     }
 

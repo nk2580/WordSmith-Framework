@@ -78,10 +78,9 @@ class Route {
     public function matchesRequest($request) {
         if ($request === $this->getURI()) {
             return true;
-        } else if($this->hasParameters()) {
+        } else if ($this->hasParameters()) {
             return preg_match($this->regexURI(), $request);
-        }
-        else{
+        } else {
             return false;
         }
     }
@@ -93,16 +92,19 @@ class Route {
     private function regexURI() {
         $raw = preg_replace('/\{(.*?)\}/', "([a-zA-Z0-9]+)", $this->uri);
         $processed = preg_replace("/\//", "\/", $raw);
-        return "/".$processed."$/";
+        return "/" . $processed . "$/";
     }
 
     private function setupParams($request) {
         $names = array();
-        preg_match('/\{(.*?)\}/' , $this->uri , $names);
+        preg_match('/\{(.*?)\}/', $this->uri, $names);
         $params = array();
-        preg_match($this->regexURI() , $request , $params);
-        print_r($names);
-        print_r($params);
+        preg_match($this->regexURI(), $request, $params);
+        unset($params[0]);
+        unset($names[0]);
+        foreach($names as $index => $name){
+            $this->parameters[$name] = $params[$index];
+        }
     }
 
 }

@@ -79,6 +79,7 @@ class Route {
         if ($request === $this->getURI()) {
             return true;
         } else if($this->hasParameters()) {
+            echo $this->regexURI();
             return preg_match($this->regexURI(), $this->request);
         }
         else{

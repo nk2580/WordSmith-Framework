@@ -41,7 +41,7 @@ class RouteGroup {
         if (!empty($route) && $route->validateMethod()) {
             $route->invoke($this->request);
         } else {
-            throw new \Symfony\Component\Routing\Exception\RouteNotFoundException();
+            echo "No route Was Defined";
         }
     }
 

@@ -21,6 +21,7 @@ class Route {
     protected $uri;
     protected $group;
     protected $action;
+    protected $parameters;
 
     public function __construct($method, $group, $uri, $action) {
         $this->method = $method;
@@ -54,21 +55,21 @@ class Route {
         $route = new self('POST', $group, $uri, $action);
         RouteFactory::addRoute($route);
     }
-    
-    public function validateMethod(){
+
+    public function validateMethod() {
         return ($_SERVER['REQUEST_METHOD'] === $this->method);
     }
 
     public function invoke() {
+          $parts = $pieces = explode("@", $this->action);
         /*
-        $parts = $pieces = explode("@", $this->action);
-        $class = $parts[0];
-        $method = $parts[1];
-        $obj = new $class();
-        $obj->$method();
+          $class = $parts[0];
+          $method = $parts[1];
+          $obj = new $class();
+          $obj->$method();
          * 
          */
-       print_r($this);
+        print_r($parts);
     }
 
 }

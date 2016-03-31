@@ -40,17 +40,15 @@ class RouteGroup {
         $route = $this->determineRoute();
         if (!empty($route) && $route->validateMethod()) {
             $route->invoke();
+        } else {
+            global $wp;
+            print_r($wp->request);
         }
     }
 
     private function parseRequest() {
         global $wp;
         $this->request = str_replace($this->endpoint, '', $wp->request);
-    }
-
-    public function request() {
-        global $wp;
-        return str_replace($this->endpoint, '', $wp->request);
     }
 
     private function determineRoute() {
@@ -63,5 +61,5 @@ class RouteGroup {
         }
         return $route;
     }
-
+    
 }

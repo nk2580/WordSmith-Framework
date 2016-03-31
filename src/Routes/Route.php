@@ -92,7 +92,9 @@ class Route {
     }
 
     private function regexURI() {
-        return preg_replace('/\{(.*?)\}/', "([a-zA-Z0-9]+)", $this->uri)."$/";
+        $raw = preg_replace('/\{(.*?)\}/', "([a-zA-Z0-9]+)", $this->uri);
+        $processed = preg_replace("/", "\/", $raw);
+        return "/".$processed."$/"
     }
 
     private function setupParams($request) {

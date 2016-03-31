@@ -48,7 +48,7 @@ class RouteGroup {
         $this->request = str_replace($this->endpoint, '', $wp->request);
     }
 
-    private function request() {
+    public function request() {
         global $wp;
         return str_replace($this->endpoint, '', $wp->request);
     }

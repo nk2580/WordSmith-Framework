@@ -41,8 +41,7 @@ class RouteGroup {
         if (!empty($route) && $route->validateMethod()) {
             $route->invoke();
         } else {
-            global $wp;
-            print_r($wp->request);
+            throw new \Symfony\Component\Routing\Exception\RouteNotFoundException();
         }
     }
 
@@ -54,12 +53,11 @@ class RouteGroup {
     private function determineRoute() {
         $route = "";
         foreach ($this->routes as $r) {
-            if ($this->request == $r->getURI()) {
+            if($r->matchesRequest($this->request)){
                 $route = $r;
-                break;
             }
         }
         return $route;
     }
-    
+
 }

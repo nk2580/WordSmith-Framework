@@ -61,15 +61,42 @@ class Route {
     }
 
     public function invoke() {
-          $parts = $pieces = explode("@", $this->action);
+        if ($this->hasParameters()) {
+            $this->gatherParams();
+        }
         /*
+          $parts = $pieces = explode("@", $this->action);
           $class = $parts[0];
           $method = $parts[1];
           $obj = new $class();
           $obj->$method();
          * 
          */
-        print_r($parts);
+        print_r($this);
+    }
+
+    public function matchesRequest($request) {
+        if (!$this->hasParameters() && $request === $this->getURI()) {
+            return true;
+        } else {
+            return preg_match($this->regexURI(), $this->request);
+        }
+    }
+
+    private function hasParameters() {
+        return preg_match('/\{(.*?)\}/', $this->uri);
+    }
+
+    private function regexURI() {
+        $s = preg_replace('/\{(.*?)\}/', "([a-zA-Z0-9]+)", $this->uri);
+        $s .="$";
+        return $s;
+    }
+
+    private function setupParams() {
+        global $wp;
+        $matches = array();
+        preg_match($this->regexURI(), );
     }
 
 }

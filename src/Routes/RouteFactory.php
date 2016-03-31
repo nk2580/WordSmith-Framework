@@ -8,22 +8,22 @@
 
 namespace nk2580\wordsmith\Routes;
 
-use nk2580\wordsmith\Utillities\Route;
-
 /**
  * Description of RouteCollection
  *
  * @author Nik Kyriakidis
  */
 class RouteFactory {
-    
+
     public static function fetchGroup($group) {
         $status = false;
         $groups = self::routeGroups();
-        foreach ($groups as $g) {
-            if ($g->name == $group) {
-                $status = $g;
-                break;
+        if (!empty($groups)) {
+            foreach ($groups as $g) {
+                if ($g->name == $group) {
+                    $status = $g;
+                    break;
+                }
             }
         }
         return $status;
@@ -41,8 +41,7 @@ class RouteFactory {
         if (!$RouteGroup) {
             $g = self::createGroup($group);
             $g->add($route);
-        }
-        else{
+        } else {
             $RouteGroup->add($route);
         }
     }

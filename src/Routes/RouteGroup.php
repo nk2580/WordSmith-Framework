@@ -23,7 +23,6 @@ class RouteGroup {
     
     public function __construct($name) {
         $this->name = $name;
-        $this->routes = new RouteCollection();
     }
     
     public function add(Route $route){

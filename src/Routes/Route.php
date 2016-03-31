@@ -54,5 +54,21 @@ class Route {
         $route = new self('POST', $group, $uri, $action);
         RouteFactory::addRoute($route);
     }
+    
+    public function validateMethod(){
+        return ($_SERVER['REQUEST_METHOD'] === $this->method);
+    }
+
+    public function invoke() {
+        /*
+        $parts = $pieces = explode("@", $this->action);
+        $class = $parts[0];
+        $method = $parts[1];
+        $obj = new $class();
+        $obj->$method();
+         * 
+         */
+       print_r($this);
+    }
 
 }

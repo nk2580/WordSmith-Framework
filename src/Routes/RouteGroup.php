@@ -19,32 +19,44 @@ class RouteGroup {
 
     protected $routes = [];
     public $name;
-    
+    private $request;
+    private $endpoint;
+
     public function __construct($name) {
         $this->name = $name;
     }
-    
-    public function add(Route $route){
+
+    public function add(Route $route) {
         $this->routes[] = $route;
     }
-    
-    public function routes(){
+
+    public function routes() {
         return $this->routes;
     }
-    
-    public function run(){
-        $request = $this->parseRequest();
-        print_r($request);
-        //evaluate the uri to a route.
-        //validate the method is accepted.
-        //initialize the corresponding class
-        //run the method defined by that class
-    }
-    
-    private function parseRequest(){
-        global $wp;
-        return str_replace('contractcloud/api/', '', $wp->request);
+
+    public function run($endpoint) {
+        $this->endpoint = $endpoint;
+        $this->parseRequest();
+        $route = $this->determineRoute();
+        if (!empty($route) && $route->validateMethod()) {
+            $route->invoke();
+        }
     }
 
+    private function parseRequest() {
+        global $wp;
+        $this->request = str_replace($this->endpoint, '', $wp->request);
+    }
+
+    private function determineRoute() {
+        $route = "";
+        foreach ($this->routes as $r) {
+            if ($this->request == $r->getURI()) {
+                $route = $r;
+                break;
+            }
+        }
+        return $route;
+    }
 
 }

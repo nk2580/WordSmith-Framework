@@ -80,7 +80,7 @@ class Route {
             return true;
         } else if($this->hasParameters()) {
             echo $this->regexURI();
-            return preg_match($this->regexURI(), $this->request);
+            //return preg_match($this->regexURI(), $this->request);
         }
         else{
             return false;
@@ -104,3 +104,7 @@ class Route {
     }
 
 }
+/*
+ * /\/clients\/([a-zA-Z0-9]+)$/
+ * /\/clients\/([a-zA-Z0-9]+)$/
+ */

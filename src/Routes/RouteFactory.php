@@ -31,7 +31,7 @@ class RouteFactory {
 
     public static function createGroup($group) {
         $obj = new RouteGroup($group);
-        self::routeGroups()[$group] = $obj;
+        RouteFactory::all()[$group] = $obj;
         return $obj;
     }
 

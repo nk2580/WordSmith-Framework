@@ -8,7 +8,6 @@
 
 namespace nk2580\wordsmith\Routes;
 
-use nk2580\wordsmith\Routes\RouteCollection;
 use nk2580\wordsmith\Routes\Route;
 
 /**

@@ -15,8 +15,14 @@ namespace nk2580\wordsmith\Utillities;
  */
 class JsonException {
 
-    public static function show($code = 100, $message = "an error occured") {
+    public static function showError($code = 100, $message = "an error occured") {
         echo json_encode(['status' => 'error', 'code' => $code, 'message' => $message]);
         exit;
     }
+
+    public static function showResponse($message = "your request was completed") {
+        echo json_encode(['status' => 'success', 'message' => $message]);
+        exit;
+    }
+
 }

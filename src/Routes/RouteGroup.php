@@ -39,10 +39,11 @@ class RouteGroup {
         $this->endpoint = $endpoint;
         $this->parseRequest();
         $route = $this->determineRoute();
-        if (!empty($route) && $route->validateMethod()) {
+        if ($route && $route->validateMethod()) {
             $route->invoke($this->request);
         } else {
-            JsonException::show(404, 'The URI you requested is invalid');
+            echo "Your Request:".$this->request;
+            JsonException::show(404, 'No route matched your request');
         }
     }
 
@@ -52,13 +53,14 @@ class RouteGroup {
     }
 
     private function determineRoute() {
-        $route = "";
         foreach ($this->routes as $r) {
-            if($r->matchesRequest($this->request)){
-                $route = $r;
+            if(!$r->matchesRequest($this->request)){
+
+            }
+            else{
+                return $r;
             }
         }
-        return $route;
     }
 
 }

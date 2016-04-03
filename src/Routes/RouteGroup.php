@@ -9,7 +9,7 @@
 namespace nk2580\wordsmith\Routes;
 
 use nk2580\wordsmith\Routes\Route;
-use nk2580\wordsmith\Utillities\JsonException;
+use nk2580\wordsmith\Utillities\JsonResponse;
 
 /**
  * Description of RouteGroup
@@ -43,7 +43,7 @@ class RouteGroup {
             $route->invoke($this->request);
         } else {
             echo "Your Request:".$this->request;
-            JsonException::show(404, 'No route matched your request');
+            JsonResponse::show(404, 'No route matched your request');
         }
     }
 

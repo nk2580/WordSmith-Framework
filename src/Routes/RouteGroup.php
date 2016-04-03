@@ -43,7 +43,7 @@ class RouteGroup {
             $route->invoke($this->request);
         } else {
             echo "Your Request:".$this->request;
-            JsonResponse::show(404, 'No route matched your request');
+            JsonResponse::showError(404, 'No route matched your request');
         }
     }
 

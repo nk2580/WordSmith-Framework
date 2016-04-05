@@ -55,11 +55,7 @@ class Route {
         $route = new self('POST', $group, $uri, $action);
         RouteFactory::addRoute($route);
     }
-
-    public function validateMethod() {
-        return ($_SERVER['REQUEST_METHOD'] === $this->method);
-    }
-
+    
     public function invoke($request) {
         if (is_object($this->action) && ($this->action instanceof Closure)) {
             $this->action();

@@ -39,7 +39,7 @@ class RouteGroup {
         $this->endpoint = $endpoint;
         $this->parseRequest();
         $route = $this->determineRoute();
-        if ($route && $route->validateMethod()) {
+        if ($route) {
             $route->invoke($this->request);
         } else {
             JsonResponse::showError(404, 'No route matched your request');
@@ -53,11 +53,12 @@ class RouteGroup {
 
     private function determineRoute() {
         foreach ($this->routes as $r) {
-            if(!$r->matchesRequest($this->request)){
-
-            }
-            else{
-                return $r;
+            //serach post requests
+            if (($_SERVER['REQUEST_METHOD'] == $r->getMethod())) {
+                //then search get requests
+                if ($r->matchesRequest($this->request)) {
+                    return $r;
+                }
             }
         }
     }

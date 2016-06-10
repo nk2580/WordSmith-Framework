@@ -94,15 +94,10 @@ class Route {
     }
 
     private function setupParams($request) {
-        $names = array();
-        preg_match('/\{(.*?)\}/', $this->uri, $names);
         $params = array();
         preg_match($this->regexURI(), $request, $params);
         unset($params[0]);
-        unset($names[0]);
-        foreach ($names as $index => $name) {
-            $this->parameters[$name] = $params[$index];
-        }
+        $this->parameters = $params;
     }
 
 }

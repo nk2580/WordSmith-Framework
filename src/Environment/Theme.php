@@ -12,7 +12,7 @@ namespace nk2580\wordsmith\Environment;
 class Theme {
 
     public static function init() {
-        Bootstrapper::init(__DIR__, get_template_directory_uri());
+        Bootstrapper::init(get_template_directory(), get_template_directory_uri());
         Bootstrapper::boot();
     }
 

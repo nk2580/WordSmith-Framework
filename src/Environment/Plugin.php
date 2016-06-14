@@ -15,8 +15,8 @@ namespace nk2580\wordsmith\Environment;
  */
 class Plugin {
     
-    public static function init() {
-        Bootstrapper::init(__DIR__, get_template_directory_uri());
+    public static function init($dir, $uri) {
+        Bootstrapper::init($dir, $uri);
         Bootstrapper::boot();
     }
 

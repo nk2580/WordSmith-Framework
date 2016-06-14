@@ -20,7 +20,6 @@ class Environment {
     public static function boot($dir) {
         $dotenv = new Dotenv($dir);
         $dotenv->load();
-        $GLOBALS['wordsmith_view_dirs'][] = $dir.getenv("VIEW_DIR");
     }
     
     public static function loadDir($dir) {

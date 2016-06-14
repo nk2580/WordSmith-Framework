@@ -3,7 +3,6 @@
     "type": "library",
     "description": "The Modern PHP WordPress theme library",
     "license": "GPL-2.0",
-    "minimum-stability" :"stable",
     "authors": [
         {
             "name": "nik kyriakidis",
@@ -13,9 +12,10 @@
     "require": {
         "php": ">=5.5.4",
         "vlucas/phpdotenv" : "*",
-        "duncan3dc/blade": "^3.0",
-        "illuminate/encryption": "^5.0",
-        "knplabs/knp-snappy": "~0.2"
+        "philo/laravel-blade": "~3",
+        "illuminate/encryption": "~5.0",
+        "knplabs/knp-snappy": "~0.2",
+        "tareq1988/wp-eloquent": "dev-master"
     },
     "autoload": {
         "psr-4": {

@@ -2,31 +2,30 @@
 
 namespace nk2580\wordsmith\Views;
 
-use duncan3dc\Laravel\BladeInstance;
-use nk2580\wordsmith\Framework;
-
+use Philo\Blade\Blade as Blade;
+use nk2580\wordsmith\Environment\Bootstrapper;
 
 class View {
-    
-    
-    private static function init(){
-        return new BladeInstance(Framework::$viewdir, Framework::$cacheDir);
+
+    public $blade;
+
+    public function __construct() {
+        $this->blade = new Blade(Bootstrapper::$VIEW_DIR, Bootstrapper::$CACHE_DIR);
     }
 
     public static function render($template, $data = array()) {
-        //$blade = self::init();
-        //echo $blade->render($template, $data);
-        echo Framework::$viewdir;
+        $view = new self();
+        echo $view->blade->view()->make($template, $data)->render();
     }
 
     public static function get($template, $data = array()) {
-        $blade = self::init();
-        return $blade->render($template, $data);
+        $view = new self();
+        return $view->blade->view()->make($template, $data)->render();
     }
 
     public static function exists($template) {
-        $blade = self::init();
-        return $blade->exists($template);
+        $view = new self();
+        return $view->blade->view()->exists($template);
     }
 
 }

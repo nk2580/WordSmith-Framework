@@ -9,6 +9,8 @@
 
 namespace nk2580\wordsmith\Environment;
 
+use Dotenv\Dotenv;
+
 class Bootstrapper {
 
     public static $APP_DIR;

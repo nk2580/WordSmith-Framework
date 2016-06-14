@@ -17,7 +17,7 @@ class Plugin {
     
     public static function init($dir, $uri) {
         Bootstrapper::init($dir, $uri);
-        Bootstrapper::boot();
+        return Bootstrapper::boot();
     }
 
 }

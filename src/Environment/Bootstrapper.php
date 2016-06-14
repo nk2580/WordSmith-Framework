@@ -37,6 +37,7 @@ class Bootstrapper {
         self::loadDir(static::$EXTENSIONS_DIR);
         self::loadDir(static::$APP_DIR);
         self::loadDir(static::$CONTROLLER_DIR);
+        return $this;
     }
 
     public static function loadDir($dir) {

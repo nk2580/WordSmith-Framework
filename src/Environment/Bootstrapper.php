@@ -31,6 +31,12 @@ class Bootstrapper {
         static::$ASSET_DIR = $uri . getenv("ASSET_DIR");
     }
 
+    public static function boot() {
+        self::loadDir(static::$EXTENSIONS_DIR);
+        self::loadDir(static::$APP_DIR);
+        self::loadDir(static::$CONTROLLER_DIR);
+    }
+
     public static function loadDir($dir) {
         $ffs = scandir($dir);
         $i = 0;

@@ -6,7 +6,7 @@ use duncan3dc\Laravel\Blade;
 
 class View {
     
-    private static function setupPaths(){
+    public static function setupPaths(){
         $paths = $GLOBALS['wordsmith_view_dirs'];
         foreach($paths as $path){
             Blade::addPath($path);

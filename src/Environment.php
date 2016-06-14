@@ -23,4 +23,20 @@ class Environment {
         $GLOBALS['wordsmith_view_dirs'][] = getenv("VIEW_DIR");
     }
     
+    public static function loadDir($dir) {
+        $ffs = scandir($dir);
+        $i = 0;
+        foreach ($ffs as $ff) {
+            if ($ff != '.' && $ff != '..') {
+                if (strlen($ff) >= 5) {
+                    if (substr($ff, -4) == '.php') {
+                        require_once $dir . '/' . $ff;
+                    }
+                }
+                if (is_dir($dir . '/' . $ff))
+                    self::loadDir($dir . '/' . $ff);
+            }
+        }
+    }
+    
 }

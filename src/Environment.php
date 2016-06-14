@@ -18,7 +18,7 @@ use Dotenv\Dotenv;
 class Environment {
 
     public static function boot($dir) {
-        $dotenv = new Dotenv\Dotenv(__DIR__);
+        $dotenv = new Dotenv($dir);
         $dotenv->load();
     }
 

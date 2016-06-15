@@ -75,11 +75,15 @@ class Instance {
     }
     
     public static function locate() {
+        return __DIR__; 
+        /*
         $return = array();
         foreach (self::$_instances as $instance) {
                     $return[] = $instance;
         }
         return $return;
+         * 
+         */
     }
 
 }

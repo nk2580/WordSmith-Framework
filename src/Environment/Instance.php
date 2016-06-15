@@ -52,7 +52,7 @@ class Instance {
             if ($ff != '.' && $ff != '..') {
                 if (strlen($ff) >= 5) {
                     if (substr($ff, -4) == '.php') {
-                        require_once $dir . '/' . $ff;
+                        include $dir . '/' . $ff;
                     }
                 }
                 if (is_dir($dir . '/' . $ff))
@@ -75,7 +75,7 @@ class Instance {
     }
     
     public static function locate() {
-        return __DIR__; 
+        return __file__; 
         /*
         $return = array();
         foreach (self::$_instances as $instance) {

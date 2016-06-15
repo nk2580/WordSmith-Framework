@@ -1,7 +1,7 @@
 <?php
 
 /*
- * CRUCIBLE ENVIRONMENT AUTOLOADER
+ * WordSmith Instance
  * 
  * This file is designed to be used with the WordSmith Crucible framework.
  * 
@@ -64,26 +64,6 @@ class Instance {
     public function View() {
         $blade = new Blade($this->VIEW_DIR, $this->CACHE_DIR);
         return $blade;
-    }
-
-    public static function all() {
-        $return = array();
-        foreach (self::$_instances as $instance) {
-                    $return[] = $instance;
-        }
-        return $return;
-    }
-    
-    public static function locate() {
-        return __file__; 
-        /*
-        $return = array();
-        foreach (self::$_instances as $instance) {
-                    $return[] = $instance;
-        }
-        return $return;
-         * 
-         */
     }
 
 }

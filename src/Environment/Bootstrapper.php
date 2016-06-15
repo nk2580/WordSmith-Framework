@@ -9,11 +9,11 @@
 
 namespace nk2580\wordsmith\Environment;
 
-use Dotenv\Dotenv;
 use Philo\Blade\Blade as Blade;
 
 class Bootstrapper {
 
+    private $dir;
     public static $APP_DIR;
     public static $EXTENSIONS_DIR;
     public static $CONTROLLER_DIR;
@@ -23,16 +23,21 @@ class Bootstrapper {
     public static $ASSET_DIR;
     private static $blade;
 
-    public static function init($dir, $uri) {
-        $dotenv = new Dotenv($dir);
-        $dotenv->load();
-        static::$APP_DIR = $dir . getenv("APP_DIR");
-        static::$CONTROLLER_DIR = $dir . getenv("CONTROLLER_DIR");
-        static::$EXTENSIONS_DIR = $dir . getenv("EXTENSIONS_DIR");
-        static::$VIEW_DIR = $dir . getenv("VIEW_DIR");
-        static::$CACHE_DIR = $dir . getenv("CACHE_DIR");
-        static::$BOWER_URI = $uri . getenv("BOWER_URI");
-        static::$ASSET_DIR = $uri . getenv("ASSET_DIR");
+    public function __construct($dir) {
+        $this->dir = $dir;
+    }
+
+    public static function init($dir) {
+        $instance = new self($dir);
+        $config = include $this->dir . "/wordsmith.php";
+        static::$APP_DIR = $this->dir . $config["APP_DIR"];
+        static::$CONTROLLER_DIR = $this->dir . $config["CONTROLLER_DIR"];
+        static::$EXTENSIONS_DIR = $this->dir . $config["EXTENSIONS_DIR"];
+        static::$VIEW_DIR = $this->dir . $config["VIEW_DIR"];
+        static::$CACHE_DIR = $this->dir . $config["CACHE_DIR"];
+        static::$BOWER_URI = $this->dir . $config["BOWER_URI"];
+        static::$ASSET_DIR = $this->dir . $config["ASSET_DIR"];
+        return $instance;
     }
 
     public static function boot() {

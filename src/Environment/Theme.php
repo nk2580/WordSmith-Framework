@@ -11,9 +11,9 @@ namespace nk2580\wordsmith\Environment;
 
 class Theme extends Instance {
 
-    public static function init() {
-        Bootstrapper::init(get_template_directory(), get_template_directory_uri());
-        Bootstrapper::boot();
+
+    public function __construct($dir,$uri) {
+        
     }
 
 }

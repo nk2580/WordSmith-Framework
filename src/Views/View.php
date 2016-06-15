@@ -2,12 +2,12 @@
 
 namespace nk2580\wordsmith\Views;
 
-use nk2580\wordsmith\Environment\Bootstrapper;
+use nk2580\wordsmith\Environment\Instance;
 
 class View {
 
     public static function render($template, $data = array()) {
-        $blade = Bootstrapper::ViewInstance();
+        $blade = Instance::all();
         echo $blade->view()->make($template, $data)->render();
     }
 

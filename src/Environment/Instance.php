@@ -13,17 +13,19 @@ use Philo\Blade\Blade as Blade;
 
 class Instance {
 
+    protected static $_instances = array();
     private $dir;
     private $uri;
-    public  $APP_DIR;
-    public  $EXTENSIONS_DIR;
-    public  $CONTROLLER_DIR;
-    public  $VIEW_DIR;
-    public  $CACHE_DIR;
-    public  $BOWER_URI;
-    public  $ASSET_DIR;
+    public $APP_DIR;
+    public $EXTENSIONS_DIR;
+    public $CONTROLLER_DIR;
+    public $VIEW_DIR;
+    public $CACHE_DIR;
+    public $BOWER_URI;
+    public $ASSET_DIR;
 
     public function __construct($dir, $uri) {
+        self::$_instances[] = $this;
         $this->dir = $dir;
         $this->uri = $uri;
         $config = include $this->dir . "/wordsmith.php";
@@ -62,6 +64,22 @@ class Instance {
     public function View() {
         $blade = new Blade($this->VIEW_DIR, $this->CACHE_DIR);
         return $blade;
+    }
+
+    public static function all() {
+        $return = array();
+        foreach (self::$_instances as $instance) {
+                    $return[] = $instance;
+        }
+        return $return;
+    }
+    
+    public static function locate() {
+        $return = array();
+        foreach (self::$_instances as $instance) {
+                    $return[] = $instance;
+        }
+        return $return;
     }
 
 }

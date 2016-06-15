@@ -29,14 +29,14 @@ class Bootstrapper {
 
     public static function init($dir) {
         $instance = new self($dir);
-        $config = include $this->dir . "/wordsmith.php";
-        static::$APP_DIR = $this->dir . $config["APP_DIR"];
-        static::$CONTROLLER_DIR = $this->dir . $config["CONTROLLER_DIR"];
-        static::$EXTENSIONS_DIR = $this->dir . $config["EXTENSIONS_DIR"];
-        static::$VIEW_DIR = $this->dir . $config["VIEW_DIR"];
-        static::$CACHE_DIR = $this->dir . $config["CACHE_DIR"];
-        static::$BOWER_URI = $this->dir . $config["BOWER_URI"];
-        static::$ASSET_DIR = $this->dir . $config["ASSET_DIR"];
+        $config = include $instance->dir . "/wordsmith.php";
+        static::$APP_DIR = $instance->dir . $config["APP_DIR"];
+        static::$CONTROLLER_DIR = $instance->dir . $config["CONTROLLER_DIR"];
+        static::$EXTENSIONS_DIR = $instance->dir . $config["EXTENSIONS_DIR"];
+        static::$VIEW_DIR = $instance->dir . $config["VIEW_DIR"];
+        static::$CACHE_DIR = $instance->dir . $config["CACHE_DIR"];
+        static::$BOWER_URI = $instance->dir . $config["BOWER_URI"];
+        static::$ASSET_DIR = $instance->dir . $config["ASSET_DIR"];
         return $instance;
     }
 

@@ -11,8 +11,6 @@
     ],
     "require": {
         "php": ">=5.5.4",
-        "vlucas/phpdotenv" : "*",
-        "philo/laravel-blade": "~3",
         "illuminate/encryption": "~5.0",
         "knplabs/knp-snappy": "~0.2",
         "tareq1988/wp-eloquent": "dev-master"

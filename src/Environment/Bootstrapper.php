@@ -10,6 +10,7 @@
 namespace nk2580\wordsmith\Environment;
 
 use Dotenv\Dotenv;
+use Philo\Blade\Blade as Blade;
 
 class Bootstrapper {
 
@@ -20,6 +21,7 @@ class Bootstrapper {
     public static $CACHE_DIR;
     public static $BOWER_URI;
     public static $ASSET_DIR;
+    private static $blade;
 
     public static function init($dir, $uri) {
         $dotenv = new Dotenv($dir);
@@ -38,6 +40,11 @@ class Bootstrapper {
         self::loadDir(static::$APP_DIR);
         self::loadDir(static::$CONTROLLER_DIR);
         return $this;
+    }
+
+    public static function ViewInstance() {
+        static::$blade = new Blade(static::$VIEW_DIR, static::$CACHE_DIR);
+        return static::$blade;
     }
 
     public static function loadDir($dir) {

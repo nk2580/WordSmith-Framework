@@ -7,8 +7,8 @@ use nk2580\wordsmith\Environment\Instance;
 class View {
 
     public static function render($template, $data = array()) {
-        $blade = Instance::all();
-        echo $blade->view()->make($template, $data)->render();
+        print_r( Instance::all());
+        //echo $blade->view()->make($template, $data)->render();
     }
 
     public static function get($template, $data = array()) {
